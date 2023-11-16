@@ -1,0 +1,200 @@
+/* Estilos para el contenido principal de la página */
+main {
+  font-size: 1rem; /* Tamaño de fuente de 1 rem */
+  display: flex; /* Usa el modelo de caja flexible */
+  flex-direction: column; /* Orientación de elementos como columna */
+  align-items: center; /* Centra elementos horizontalmente */
+  justify-content: center; /* Centra elementos verticalmente */
+  width: 100%; /* Anchura del 100% del contenedor */
+  padding: 1rem; /* Relleno de 1 rem en todos los lados */
+  box-sizing: border-box; /* La anchura y altura incluyen el borde y el relleno */
+  margin: 2rem 0; /* Margen superior e inferior de 2 rem, sin margen izquierdo y derecho */
+}
+
+/* Estilos para la sección de lista de ejercicios */
+#exercises-list-section {
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  min-height: 80vh; /* Altura mínima del 80% del alto de la ventana */
+  border: 2px solid #ccc; /* Borde de 2 píxeles sólido en color gris (#ccc) */
+  border-radius: 5px; /* Borde redondeado de 5 píxeles */
+}
+
+/* Estilos para la lista de ejercicios */
+#exercises-list {
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin relleno */
+  list-style: none; /* Sin viñetas en la lista */
+  display: flex; /* Usa el modelo de caja flexible */
+  flex-direction: column; /* Orientación de elementos como columna */
+  align-items: center; /* Centra elementos horizontalmente */
+  width: 100%; /* Anchura del 100% del contenedor */
+}
+
+/* Estilos para cada ejercicio en la lista */
+.exercise {
+  display: flex; /* Usa el modelo de caja flexible */
+  align-items: center; /* Centra elementos horizontalmente */
+  justify-content: space-between; /* Espacio uniforme entre elementos */
+  flex-wrap: wrap; /* Permite el ajuste de elementos en múltiples líneas */
+  width: 100%; /* Anchura del 100% del contenedor */
+  padding: 1em; /* Relleno de 1 rem en todos los lados */
+  box-sizing: border-box; /* La anchura y altura incluyen el borde y el relleno */
+  border-bottom: 0.125em solid #ccc; /* Borde inferior de 0.125 rem sólido en color gris (#ccc) */
+}
+
+/* Estilos para el nombre de la categoría del ejercicio */
+.exercise-category-name {
+  width: 50%; /* Anchura del 50% del contenedor */
+}
+
+/* Estilos para el nombre de la categoría, información del ejercicio y calificación */
+.exercise-category-name,
+.exercise-info,
+.exercise-rating {
+  display: flex; /* Usa el modelo de caja flexible */
+  align-items: center; /* Centra elementos horizontalmente */
+}
+
+/* Estilos para la información del ejercicio */
+.exercise-info {
+  justify-content: end; /* Alinea los elementos al final del contenedor */
+  gap: 1em; /* Espacio entre elementos de 1 em */
+}
+
+/* Estilos para la imagen de la categoría del ejercicio */
+.exercise-category-name img {
+  width: 3em; /* Anchura de la imagen de 3 em */
+  margin-right: 1em; /* Margen derecho de 1 em */
+}
+
+/* Estilos para el nombre del ejercicio */
+.exercise-name {
+  font-size: 1.5em; /* Tamaño de fuente de 1.5 em */
+  font-weight: 400; /* Peso de fuente 400 (normal) */
+}
+
+/* Estilos para la calificación del ejercicio */
+.exercise-rating span {
+  font-size: 1.25em; /* Tamaño de fuente de 1.25 em */
+}
+
+/* Estilos para el icono de calificación del ejercicio */
+.exercise-rating span.material-icons {
+  font-size: 2em; /* Tamaño de fuente del icono de 2 em */
+  color: #f1c40f; /* Color amarillo (#f1c40f) */
+}
+
+/* Estilos para el botón del ejercicio */
+.exercise-button {
+  padding: 0.5em 1em; /* Relleno de 0.5 em arriba/abajo y 1 em izquierda/derecha */
+  background: #f1c40f; /* Fondo amarillo (#f1c40f) */
+  color: #292c2f; /* Color de texto (#292c2f) */
+  font-size: 1.25em; /* Tamaño de fuente de 1.25 em */
+  font-weight: 500; /* Peso de fuente 500 (semibold) */
+  text-decoration: none; /* Sin decoración de texto */
+  border-radius: 5px; /* Borde redondeado de 5 píxeles */
+  transition: background 0.3s ease; /* Transición suave del fondo en 0.3 segundos */
+}
+
+/* Estilos para el botón del ejercicio en estado hover */
+.exercise-button:hover {
+  background: #e0b60f; /* Cambia el fondo a un tono ligeramente más oscuro al pasar el cursor */
+}
+
+/* Contenedor de mensaje de error */
+.error-message-container {
+  display: flex; /* Usa el modelo de caja flexible */
+  align-items: center; /* Centra elementos horizontalmente */
+  justify-content: center; /* Centra elementos verticalmente */
+  width: 100%; /* Anchura del 100% del contenedor */
+  min-height: 80vh; /* Altura mínima del 80% del alto de la ventana */
+}
+
+/* Estilos para el mensaje de error */
+.error-message {
+  font-size: 1.5em; /* Tamaño de fuente de 1.5 em */
+  font-weight: 500; /* Peso de fuente 500 (semibold) */
+  opacity: 0.6; /* Opacidad del 60% (semisombreado) */
+  text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Estilos para la paginación */
+.pagination {
+  text-align: center; /* Alineación del texto en el centro */
+  margin-top: 20px; /* Margen superior de 20 píxeles */
+}
+
+/* Estilos para los enlaces de paginación */
+.page-link {
+  display: inline-block; /* Hace que los enlaces sean elementos en línea */
+  padding: 5px 10px; /* Relleno de 5 píxeles arriba/abajo y 10 píxeles izquierda/derecha */
+  margin: 2px; /* Margen de 2 píxeles entre enlaces */
+  border: 1px solid #ccc; /* Borde de 1 píxel sólido en color gris (#ccc) */
+  background-color: #fff; /* Fondo blanco (#fff) */
+  color: #333; /* Color de texto (#333) */
+  text-decoration: none; /* Sin decoración de enlace */
+  border-radius: 3px; /* Borde redondeado de 3 píxeles */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave del fondo y color en 0.3 segundos */
+}
+
+/* Estilos para los enlaces de paginación en estado hover */
+.page-link:hover {
+  background-color: #333; /* Cambia el fondo a color gris oscuro (#333) al pasar el cursor */
+  color: #fff; /* Cambia el color del texto a blanco al pasar el cursor */
+}
+
+/* Estilos para el enlace de paginación activo */
+.page-link.active {
+  background-color: #333; /* Fondo gris oscuro (#333) para el enlace activo */
+  color: #fff; /* Color de texto blanco para el enlace activo */
+}
+
+/* Estilos para el pie de página */
+footer {
+  background: #292c2f; /* Fondo gris oscuro (#292c2f) */
+}
+
+/* Estilos responsivos para pantallas pequeñas (máx. 768px) */
+@media screen and (max-width: 768px) {
+  main {
+    font-size: 0.75rem; /* Reducción del tamaño de fuente a 0.75 rem */
+  }
+
+  #exercises-list-section {
+    width: 100%; /* Anchura del 100% para ocupar todo el ancho */
+    border-radius: 0; /* Sin borde redondeado */
+    border: none; /* Sin borde */
+    min-height: auto; /* Altura mínima automática */
+  }
+}
+
+/* Estilos adicionales para pantallas aún más pequeñas (máx. 450px) */
+@media screen and (max-width: 450px) {
+  .exercise {
+    flex-direction: column; /* Orientación de elementos como columna */
+    align-items: flex-start; /* Alineación a la izquierda */
+  }
+
+  .exercise-category-name {
+    width: 100%; /* Anchura del 100% para ocupar todo el ancho */
+    margin-bottom: 1em; /* Margen inferior de 1 em */
+  }
+
+  .exercise-category-name img {
+    width: 2em; /* Anchura de la imagen de 2 em */
+    margin-right: 0.5em; /* Margen derecho de 0.5 em */
+  }
+
+  .exercise-info {
+    width: 100%; /* Anchura del 100% para ocupar todo el ancho */
+    justify-content: space-between; /* Espacio uniforme entre elementos */
+  }
+
+  .exercise-rating {
+    margin-top: 1em; /* Margen superior de 1 em */
+  }
+
+  .exercise-button {
+    margin-top: 1em; /* Margen superior de 1 em */
+  }
+}

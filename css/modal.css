@@ -1,0 +1,69 @@
+/* Estilo del cuerpo de la página */
+body {
+  overflow: hidden; /* Oculta la barra de desplazamiento vertical */
+}
+
+/* Estilo del modal */
+.modal {
+  display: flex; /* Usa un modelo de caja flexible para organizar los elementos internos */
+  gap: 2rem; /* Espacio entre elementos internos del modal */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  justify-content: center; /* Centra verticalmente los elementos dentro del modal */
+  align-items: center; /* Centra horizontalmente los elementos dentro del modal */
+  width: 100%; /* Ancho del modal al 100% del contenedor padre */
+  height: 100vh; /* Alto del modal al 100% de la altura de la ventana */
+  padding: 0.5rem; /* Relleno interno de 0.5rem en todas las direcciones */
+  box-sizing: border-box; /* Incluye el relleno en el cálculo del tamaño total del elemento */
+  background: #282828; /* Color de fondo del modal */
+  overflow: auto; /* Habilita la barra de desplazamiento en el modal si el contenido es demasiado grande */
+}
+
+/* Estilo del texto dentro del modal */
+.modal-text {
+  color: #fff; /* Color del texto en blanco */
+  font-size: 3.5rem; /* Tamaño de fuente de 3.5rem */
+  font-weight: 600; /* Grosor de fuente 600 (negrita) */
+  margin: 0; /* Elimina el margen en todos los lados del texto */
+}
+
+/* Estilo del texto con el color lightskyblue dentro del modal */
+.modal-text span {
+  color: lightskyblue; /* Color del texto en lightskyblue */
+  display: block; /* Muestra como bloque para ocupar todo el ancho disponible */
+  font-size: 2rem; /* Tamaño de fuente de 2rem */
+  font-weight: 400; /* Grosor de fuente 400 (normal) */
+}
+
+/* Estilo del botón dentro del modal */
+.modal-button {
+  border: 2px solid #fff; /* Borde de 2px sólido en blanco */
+  text-decoration: none; /* Elimina la decoración de texto (subrayado) en el botón */
+  color: #fff; /* Color del texto en blanco */
+  background: transparent; /* Fondo transparente para el botón */
+  padding: 0.5rem 1rem; /* Relleno interno de 0.5rem en la parte superior e inferior y 1rem en los lados */
+  font-size: 1.2rem; /* Tamaño de fuente de 1.2rem */
+  font-weight: 500; /* Grosor de fuente 500 (seminegrita) */
+  border-radius: 3px; /* Radio de borde de 3px */
+  -webkit-border-radius: 3px; /* Radio de borde para navegadores Webkit (Safari, Chrome, etc.) */
+  -moz-border-radius: 3px; /* Radio de borde para navegadores Mozilla (Firefox) */
+  -ms-border-radius: 3px; /* Radio de borde para navegadores Microsoft (Internet Explorer) */
+  -o-border-radius: 3px; /* Radio de borde para navegadores Opera */
+  transition: all 0.3s ease-in-out; /* Transición suave de todas las propiedades durante 0.3 segundos */
+  -webkit-transition: all 0.3s ease-in-out; /* Transición suave para navegadores Webkit */
+  -moz-transition: all 0.3s ease-in-out; /* Transición suave para navegadores Mozilla */
+  -ms-transition: all 0.3s ease-in-out; /* Transición suave para navegadores Microsoft */
+  -o-transition: all 0.3s ease-in-out; /* Transición suave para navegadores Opera */
+}
+
+/* Estilo del botón cuando se coloca el cursor encima */
+.modal-button:hover {
+  background: #fff; /* Cambia el fondo a blanco */
+  color: #1e1e1e; /* Cambia el color del texto a un tono más oscuro */
+}
+
+/* Estilo del texto dentro del modal cuando el ancho de la pantalla es menor o igual a 600px */
+@media screen and (max-width: 600px) {
+  .modal-text {
+    font-size: 2.5rem; /* Reduce el tamaño de fuente a 2.5rem */
+  }
+}

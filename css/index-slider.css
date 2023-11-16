@@ -1,0 +1,335 @@
+/* Estilos para la sección del slider */
+#slider-section {
+  background: linear-gradient(#292c2f 0%, #4f565c 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor del slider */
+.slider-container {
+  width: 100%;
+}
+
+/* Estilos para los elementos de entrada del slider */
+.slider-input {
+  display: none; /* Oculta los elementos de entrada */
+}
+
+/* Estilos para el slider */
+.slider {
+  width: inherit;
+  overflow: hidden;
+}
+
+/* Estilos para los banners del slider */
+.banner {
+  text-align: center;
+  width: inherit;
+  height: inherit;
+  display: none; /* Inicialmente oculto */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Contenedor interno para los elementos del banner */
+.banner-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20rem;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para el título del banner y la sección de ejercicios */
+.banner-inner-wrapper h1,
+.exercises-section-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 95%;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el párrafo dentro del banner */
+.banner-inner-wrapper p {
+  line-height: 1.5;
+}
+
+/* Línea divisoria horizontal */
+.line {
+  display: block;
+  width: 4rem;
+  height: 0.1875rem;
+  margin: 2.5rem auto;
+  background: #fff;
+}
+
+/* Estilos para el botón "Learn More" en el banner */
+.learn-more-button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.learn-more-button a {
+  text-decoration: none;
+  color: #fff;
+  border: 0.1875rem solid #fff;
+  font-size: 0.875rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.5rem 2rem;
+  transition: 0.5s;
+}
+
+/* Estilos al pasar el mouse por el botón "Learn More" */
+.learn-more-button a:hover {
+  background: #fff;
+  color: #333;
+  border-color: #333;
+}
+
+/* Estilos para la barra de navegación en el slider */
+.slider-container nav {
+  text-align: center;
+  width: inherit;
+}
+
+/* Estilos para los controles del slider */
+.controls {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Estilos para las etiquetas de los controles */
+.controls label {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  height: 3.1em;
+  overflow: hidden;
+  margin: 0 1em;
+  padding-top: 1em;
+  text-align: left;
+  text-transform: uppercase;
+  font-family: var(--main-font);
+  font-size: 1em;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Estilos para la barra de progreso */
+.progressbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+}
+
+/* Estilos para el relleno de la barra de progreso */
+.progressbar-fill {
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  margin-left: -100%;
+  background: #3498db;
+}
+
+/* Estilos para las etiquetas de los controles */
+.controls label span {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+/* Estilos al pasar el mouse por las etiquetas de los controles */
+.controls label:hover {
+  color: #3498db;
+}
+
+/* Estilos para mostrar y resaltar el banner activo */
+#exercises:checked ~ .slider #exercises-banner,
+#calculator:checked ~ .slider #calculator-banner,
+#foro:checked ~ .slider #foro-banner {
+  display: block;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Estilos para las etiquetas de los controles activos */
+#exercises:checked ~ nav label:nth-of-type(1),
+#calculator:checked ~ nav label:nth-of-type(2),
+#foro:checked ~ nav label:nth-of-type(3) {
+  cursor: default;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+/* Estilos para la barra de progreso activa */
+#exercises:checked ~ nav label:nth-of-type(1) .progressbar,
+#calculator:checked ~ nav label:nth-of-type(2) .progressbar,
+#foro:checked ~ nav label:nth-of-type(3) .progressbar {
+  background: #fff;
+}
+
+/* Animación de relleno de la barra de progreso */
+@keyframes progressBarFill {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+/* Aplicar la animación de relleno a la barra de progreso activa */
+#exercises:checked ~ nav label:nth-of-type(1) .progressbar-fill,
+#calculator:checked ~ nav label:nth-of-type(2) .progressbar-fill,
+#foro:checked ~ nav label:nth-of-type(3) .progressbar-fill {
+  animation: progressBarFill 5s linear;
+  -webkit-animation: progressBarFill 5s linear;
+}
+
+/* Estilos para la sección de ejercicios */
+#exercises-section {
+  background: #4f565c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+}
+
+/* Contenedor de la sección de ejercicios */
+.exercises-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el título de la sección de ejercicios */
+.exercises-section-title {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los elementos de ejercicio */
+.exercise-item {
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilos para el título del ejercicio */
+.exercise-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para la descripción del ejercicio */
+.exercise-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el enlace del ejercicio */
+.exercise-link {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+/* Estilos al pasar el mouse por el enlace del ejercicio */
+.exercise-link:hover {
+  background-color: #555;
+}
+
+/* Estilos para tamaños de pantalla más pequeños */
+@media only screen and (max-width: 1919px) {
+  .slider-section {
+    height: 28rem;
+  }
+
+  .banner-inner-wrapper {
+    height: 18rem;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .line {
+    margin: 2em auto;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .controls {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .controls {
+    width: 90%;
+  }
+
+  .banner-inner-wrapper h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .controls {
+    width: 100%;
+  }
+
+  .controls label {
+    width: 19%;
+    font-size: 0.8em;
+  }
+
+  .line {
+    margin: 1.7em auto;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .banner-inner-wrapper h1,
+  .exercises-section-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .controls label {
+    width: 40%;
+    font-size: 0.7em;
+  }
+
+  .line {
+    margin: 1.7em auto;
+  }
+}
+

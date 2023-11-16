@@ -1,0 +1,196 @@
+/* Estilo del contenido principal */
+main {
+  background: #2e2e2e; /* Color de fondo */
+  display: flex; /* Utiliza un modelo de caja flexible para organizar los elementos internos */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  justify-content: center; /* Centra verticalmente los elementos dentro de main */
+  align-items: center; /* Centra horizontalmente los elementos dentro de main */
+  min-height: 100vh; /* Altura mínima del 100% de la ventana */
+  padding: 1rem 0; /* Relleno interno de 1rem en la parte superior e inferior y 0 en los lados */
+}
+
+/* Estilo del contenedor del usuario */
+#user-card {
+  display: flex; /* Utiliza un modelo de caja flexible para organizar los elementos internos */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  justify-content: center; /* Centra verticalmente los elementos dentro de #user-card */
+  align-items: center; /* Centra horizontalmente los elementos dentro de #user-card */
+  width: 90%; /* Ancho del 90% del contenedor padre */
+  background: linear-gradient(#3e3e3e 0%, #ffffff 20%, #ffffff 80%, #3e3e3e 100%); /* Fondo con degradado lineal */
+  box-sizing: border-box; /* Incluye el relleno en el cálculo del tamaño total del elemento */
+  max-width: 400px; /* Ancho máximo de 400px */
+  border: #3e3e3e 1px solid; /* Borde de 1px sólido en color #3e3e3e */
+  padding: 0 1rem; /* Relleno interno de 0 en la parte superior e inferior y 1rem en los lados */
+  margin: 1rem 0; /* Margen en la parte superior e inferior de 1rem y 0 en los lados */
+  border-radius: 1rem; /* Radio de borde de 1rem */
+  -webkit-border-radius: 1rem; /* Radio de borde para navegadores Webkit */
+  -moz-border-radius: 1rem; /* Radio de borde para navegadores Mozilla */
+  -ms-border-radius: 1rem; /* Radio de borde para navegadores Microsoft */
+  -o-border-radius: 1rem; /* Radio de borde para navegadores Opera */
+}
+
+/* Estilo del encabezado del perfil */
+#profile-header {
+  display: flex; /* Utiliza un modelo de caja flexible para organizar los elementos internos */
+  justify-content: center; /* Centra horizontalmente los elementos dentro de #profile-header */
+  align-items: center; /* Centra verticalmente los elementos dentro de #profile-header */
+  background: #3e3e3e; /* Color de fondo */
+  height: 5rem; /* Altura de 5rem */
+  padding: 0.5rem 1rem; /* Relleno interno de 0.5rem en la parte superior e inferior y 1rem en los lados */
+  width: 100%; /* Ancho del 100% del contenedor padre */
+  border-radius: 1rem 1rem 0 0; /* Radio de borde para la parte superior */
+  -webkit-border-radius: 1rem 1rem 0 0; /* Radio de borde para navegadores Webkit */
+  -moz-border-radius: 1rem 1rem 0 0; /* Radio de borde para navegadores Mozilla */
+  -ms-border-radius: 1rem 1rem 0 0; /* Radio de borde para navegadores Microsoft */
+  -o-border-radius: 1rem 1rem 0 0; /* Radio de borde para navegadores Opera */
+}
+
+/* Estilo del ícono del perfil */
+#profile-header span.material-icons {
+  width: 10rem; /* Ancho de 10rem */
+  height: 10rem; /* Altura de 10rem */
+  background: #3e3e3e; /* Color de fondo */
+  margin: auto; /* Margen automático para centrar horizontalmente */
+  color: #fff; /* Color del ícono en blanco */
+  font-size: 10rem; /* Tamaño de fuente de 10rem */
+  border-radius: 50%; /* Radio de borde para crear un círculo */
+  -webkit-border-radius: 50%; /* Radio de borde para navegadores Webkit */
+  -moz-border-radius: 50%; /* Radio de borde para navegadores Mozilla */
+  -ms-border-radius: 50%; /* Radio de borde para navegadores Microsoft */
+  -o-border-radius: 50%; /* Radio de borde para navegadores Opera */
+}
+
+/* Estilo del contenedor de información del usuario */
+#user-info {
+  display: flex; /* Utiliza un modelo de caja flexible para organizar los elementos internos */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  justify-content: center; /* Centra verticalmente los elementos dentro de #user-info */
+  align-items: center; /* Centra horizontalmente los elementos dentro de #user-info */
+  margin: auto; /* Margen automático en todos los lados */
+  margin-top: 4rem; /* Margen superior de 4rem */
+  width: 90%; /* Ancho del 90% del contenedor padre */
+  max-width: 400px; /* Ancho máximo de 400px */
+}
+
+/* Estilo de los elementos span y h2 dentro de #user-info */
+#user-info span, #user-info h2 {
+  width: 100%; /* Ancho del 100% */
+}
+
+/* Estilo del nombre de usuario */
+#user-info .username {
+  font-size: 1.5rem; /* Tamaño de fuente de 1.5rem */
+  font-weight: 600; /* Grosor de fuente 600 (negrita) */
+  margin-bottom: 0.5rem; /* Margen inferior de 0.5rem */
+  text-align: center; /* Alineación del texto al centro */
+}
+
+/* Estilo del contenedor de información del usuario */
+.user-info-span-container {
+  display: flex; /* Utiliza un modelo de caja flexible para organizar los elementos internos */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: center; /* Centra horizontalmente los elementos dentro del contenedor */
+  width: 90%; /* Ancho del 90% del contenedor padre */
+  border: #3e3e3e 1px solid; /* Borde de 1px sólido en color #3e3e3e */
+  padding: 1rem; /* Relleno interno de 1rem en todas las direcciones */
+  margin: 1rem 0; /* Margen en la parte superior e inferior de 1rem y 0 en los lados */
+  border-radius: 5px; /* Radio de borde de 5px */
+  -webkit-border-radius: 5px; /* Radio de borde para navegadores Webkit */
+  -moz-border-radius: 5px; /* Radio de borde para navegadores Mozilla */
+  -ms-border-radius: 5px; /* Radio de borde para navegadores Microsoft */
+  -o-border-radius: 5px; /* Radio de borde para navegadores Opera */
+}
+
+/* Estilo del texto "Nombre y Metas" */
+#user-info .name-goals {
+  font-size: 1.1rem; /* Tamaño de fuente de 1.1rem */
+  font-weight: 600; /* Grosor de fuente 600 (negrita) */
+  margin-bottom: 0.5rem; /* Margen inferior de 0.5rem */
+  opacity: 0.8; /* Opacidad del 80% */
+}
+
+/* Estilo del texto dentro de "Nombre y Metas" */
+#user-info .name-goals span {
+  font-weight: 400; /* Grosor de fuente 400 (normal) */
+}
+
+/* Estilo de la fecha de nacimiento y género */
+#user-info .birth-date, #user-info .gender {
+  font-size: 1rem; /* Tamaño de fuente de 1rem */
+  font-weight: 300; /* Grosor de fuente 300 */
+  margin: 1rem 0; /* Margen de 1rem en la parte superior e inferior y 0 en los lados */
+  opacity: 0.8; /* Opacidad del 80% */
+}
+
+/* Estilo de la fecha de nacimiento */
+#user-info .birth-date {
+  margin-bottom: 0rem; /* Margen inferior de 0rem */
+}
+
+/* Estilo del género */
+#user-info .gender {
+  margin-top: 0rem; /* Margen superior de 0rem */
+}
+
+/* Estilo del pie de perfil */
+#profile-footer {
+  display: flex; /* Utiliza un modelo de caja flexible para organizar los elementos internos */
+  justify-content: center; /* Centra horizontalmente los elementos dentro de #profile-footer */
+  align-items: center; /* Centra verticalmente los elementos dentro de #profile-footer */
+  background: #3e3e3e; /* Color de fondo */
+  height: 5rem; /* Altura de 5rem */
+  padding: 0.5rem 1rem; /* Relleno interno de 0.5rem en la parte superior e inferior y 1rem en los lados */
+  width: 100%; /* Ancho del 100% del contenedor padre */
+  border-radius: 0 0 1rem 1rem; /* Radio de borde para la parte inferior */
+  -webkit-border-radius: 0 0 1rem 1rem; /* Radio de borde para navegadores Webkit */
+  -moz-border-radius: 0 0 1rem 1rem; /* Radio de borde para navegadores Mozilla */
+  -ms-border-radius: 0 0 1rem 1rem; /* Radio de borde para navegadores Microsoft */
+  -o-border-radius: 0 0 1rem 1rem; /* Radio de borde para navegadores Opera */
+}
+
+/* Estilo de la lista de enlaces en el pie de perfil */
+#profile-footer ul {
+  margin: 0; /* Elimina el margen */
+  padding: 0; /* Elimina el relleno */
+  display: flex; /* Utiliza un modelo de caja flexible para organizar los elementos internos */
+  gap: 1rem; /* Espacio entre elementos internos de 1rem */
+  justify-content: center; /* Centra horizontalmente los elementos dentro de ul */
+  align-items: center; /* Centra verticalmente los elementos dentro de ul */
+  width: 100%; /* Ancho del 100% del contenedor padre */
+  list-style: none; /* Elimina las viñetas de la lista */
+}
+
+/* Estilo de los enlaces en el pie de perfil */
+.profile-footer-link {
+  display: flex; /* Utiliza un modelo de caja flexible para organizar los elementos internos */
+  justify-content: center; /* Centra horizontalmente los elementos dentro de .profile-footer-link */
+  align-items: center; /* Centra verticalmente los elementos dentro de .profile-footer-link */
+  color: #fff; /* Color del texto en blanco */
+  padding: 0.5rem 1rem; /* Relleno interno de 0.5rem en la parte superior e inferior y 1rem en los lados */
+  font-size: 0.8rem; /* Tamaño de fuente de 0.8rem */
+  text-decoration: none; /* Elimina la decoración de texto (subrayado) en los enlaces */
+  outline: 1px solid #fff; /* Borde de 1px sólido en blanco para resaltar el enlace */
+  border-radius: 5px; /* Radio de borde de 5px */
+  -webkit-border-radius: 5px; /* Radio de borde para navegadores Webkit */
+  -moz-border-radius: 5px; /* Radio de borde para navegadores Mozilla */
+  -ms-border-radius: 5px; /* Radio de borde para navegadores Microsoft */
+  -o-border-radius: 5px; /* Radio de borde para navegadores Opera */
+  transition: all 300ms ease-in-out; /* Transición suave de todas las propiedades durante 300ms */
+  -webkit-transition: all 300ms ease-in-out; /* Transición suave para navegadores Webkit */
+  -moz-transition: all 300ms ease-in-out; /* Transición suave para navegadores Mozilla */
+  -ms-transition: all 300ms ease-in-out; /* Transición suave para navegadores Microsoft */
+  -o-transition: all 300ms ease-in-out; /* Transición suave para navegadores Opera */
+}
+
+/* Estilo de los enlaces en el pie de perfil cuando se coloca el cursor encima */
+.profile-footer-link:hover {
+  background: #fff; /* Cambia el fondo a blanco */
+  color: #3e3e3e; /* Cambia el color del texto a #3e3e3e */
+}
+
+/* Estilo del enlace de cierre de sesión cuando se coloca el cursor encima */
+.profile-footer-link.logout:hover {
+  background: rgb(255 0 0 / 10%); /* Cambia el fondo a un 10% de rojo transparente */
+  color: rgb(255, 100, 100); /* Cambia el color del texto a un tono de rojo */
+  outline: none; /* Elimina el borde al quitar el enfoque del enlace */
+}

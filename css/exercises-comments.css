@@ -1,0 +1,51 @@
+/* Estilos para el contenedor de comentarios */
+#exercise-comments {
+  display: flex; /* Usa el modelo de caja flexible */
+  flex-direction: column; /* Orientación de los elementos como columna */
+  gap: 1rem; /* Espacio entre elementos (1 rem) */
+  padding: 1rem 0; /* Relleno superior e inferior (1 rem) y sin relleno horizontal */
+  margin-top: 1rem; /* Margen superior (1 rem) */
+  box-sizing: border-box; /* La anchura y altura incluyen el borde y el relleno */
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  max-width: 500px; /* Anchura máxima de 500px */
+}
+
+/* Estilos para el caso en que no hay comentarios */
+.no-comments {
+  text-align: center; /* Alineación del texto en el centro */
+  opacity: 0.5; /* Opacidad del 50% (semitransparente) */
+}
+
+/* Estilos para los comentarios individuales */
+.exercise-comment {
+  display: flex; /* Usa el modelo de caja flexible */
+  flex-direction: column; /* Orientación de los elementos como columna */
+  gap: 0.5rem; /* Espacio entre elementos (0.5 rem) */
+  padding: 0.5rem 0; /* Relleno superior e inferior (0.5 rem) y sin relleno horizontal */
+  border: none; /* Sin borde */
+  margin: 0; /* Sin margen */
+  max-width: 100%; /* Anchura máxima del 100% */
+}
+
+/* Estilos para el enlace de inicio de sesión */
+#login-link {
+  color: #09f; /* Color del texto en azul (#09f) */
+}
+
+/* Estilos para el nombre de usuario */
+.user {
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin relleno */
+  font-size: 1rem; /* Tamaño de fuente de 1 rem */
+  font-weight: 500; /* Peso de fuente 500 (semibold) */
+}
+
+/* Estilos para el texto del comentario */
+.comment-text {
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin relleno */
+  font-size: 1rem; /* Tamaño de fuente de 1 rem */
+  font-weight: 400; /* Peso de fuente 400 (normal) */
+  opacity: 0.5; /* Opacidad del 50% (semitransparente) */
+  letter-spacing: 0.5px; /* Espaciado entre letras de 0.5 píxeles */
+}

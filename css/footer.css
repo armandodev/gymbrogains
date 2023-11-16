@@ -1,0 +1,15 @@
+/* Estilos para el pie de página */
+footer {
+  background: linear-gradient(#4f565c 0%, #292c2f 100%); /* Fondo degradado desde gris oscuro (#4f565c) a gris aún más oscuro (#292c2f) */
+  color: #fff; /* Color de texto blanco (#fff) */
+  padding: 1rem 0.5rem; /* Relleno de 1 rem arriba/abajo y 0.5 rem izquierda/derecha */
+  min-height: 2rem; /* Altura mínima de 2 rem */
+}
+
+/* Estilos para el párrafo en la parte inferior del pie de página */
+.footer-bottom p {
+  font-size: 1rem; /* Tamaño de fuente de 1 rem */
+  margin: 0; /* Sin margen */
+  text-align: center; /* Alineación del texto en el centro */
+  line-height: 1.5; /* Altura de línea de 1.5 (espaciado entre líneas) */
+}

@@ -1,0 +1,317 @@
+/* Configuración del fondo */
+.background {
+  width: 100%; /* Ancho del fondo */
+  height: 100%; /* Alto del fondo */
+  position: fixed; /* Posición fija */
+  top: 0; /* Posicionado en la parte superior */
+  left: 0; /* Posicionado en la parte izquierda */
+  background: url("./../images/calculator-background.webp"); /* Imagen de fondo */
+  background-size: cover; /* Tamaño del fondo */
+  background-position: center; /* Posicionado en el centro */
+  filter: grayscale(100%) brightness(15%); /* Filtro de escala de grises y brillo */
+  -webkit-filter: grayscale(100%) brightness(15%); 
+  z-index: -1; /* Posicionado detrás de todo */
+}
+
+/* Configuración del header */
+header {
+  background: none; /* Fondo transparente */
+}
+
+/* Configuración del main */
+main {
+  padding: 3rem 1rem; /* Espaciado interno */
+}
+
+/* Configuración de las secciones */
+#form-section,
+#calculate-result-section { 
+  background: rgba(50, 50, 50, 0.8);  /* Fondo con transparencia */
+  color: #fff; /* Color de texto */
+  padding: 2rem; /* Espaciado interno */
+  width: 90%; /* Ancho del contenedor */
+  max-width: 600px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrado horizontal */
+  box-sizing: border-box; /* Caja de borde */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  border-radius: 5px; /* Borde redondeado */ 
+  -webkit-border-radius: 5px; /* Borde redondeado para navegadores webkit */
+  -moz-border-radius: 5px; /* Borde redondeado para navegadores mozilla */
+  -ms-border-radius: 5px; /* Borde redondeado para navegadores microsoft */
+  -o-border-radius: 5px; /* Borde redondeado para navegadores opera */
+}
+
+/* Configuración para los títulos de las secciones */
+#form-title,
+#calculate-result-title {
+  font-size: 2.5rem; /* Tamaño de fuente */
+}
+
+/* Configuración para el titulo de los resultados */
+#calculate-result-title {
+  text-align: center; /* Alineación centrada */
+}
+
+/* Configuración para el contenedor de los resultados */
+.calculate-result-container {
+  display: flex; /* Mostrar como flex */
+  flex-direction: column; /* Dirección de los elementos */
+  align-items: center; /* Alineación centrada */
+  margin-top: 2rem; /* Espaciado superior */
+  padding: 1rem; /* Espaciado interno */
+  box-sizing: border-box; /* Caja de borde */
+  border-radius: 5px; /* Borde redondeado */
+  -webkit-border-radius: 5px; /* Borde redondeado para navegadores webkit */
+  -moz-border-radius: 5px; /* Borde redondeado para navegadores mozilla */
+  -ms-border-radius: 5px; /* Borde redondeado para navegadores microsoft */
+  -o-border-radius: 5px; /* Borde redondeado para navegadores opera */
+}
+
+/* Configuración para los elementos de los resultados */
+.calculate-result-item {
+  display: flex; /* Mostrar como flex */
+  justify-content: space-between; /* Justificar el espacio entre los elementos */
+  align-items: center; /* Alineación centrada */
+  width: 100%; /* Ancho del elemento */
+  padding: 0.5rem; /* Espaciado interno */
+  box-sizing: border-box; /* Caja de borde */
+  border-bottom: 1px solid rgba(100, 100, 100, 1); /* Borde inferior */
+}
+
+/* Configuración para el último elemento de los resultados */
+.calculate-result-item:last-of-type {
+  border-bottom: none; /* Sin borde inferior */
+}
+
+/* Configuración para los títulos de los resultados */
+.calculate-result-item-title {
+  font-size: 1.2rem; /* Tamaño de fuente */
+  font-weight: 500; /* Grosor de fuente */
+  opacity: 0.8; /* Opacidad */
+}
+
+/* Configuración para los valores de los resultados */
+.calculate-result-item-value {
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: 400; /* Grosor de fuente */
+  opacity: 0.5; /* Opacidad */
+}
+
+/* Configuración para el botón de los resultados */
+#calculate-result-button,
+#calculate-submit-button {
+  display: flex; /* Mostrar como flex */
+  gap: 0.5rem; /* Espaciado entre elementos */
+  justify-content: center; /* Justificar el espacio entre los elementos */
+  align-items: center; /* Alineación centrada */
+  width: fit-content; /* Ancho del elemento */
+  background: transparent; /* Fondo transparente */
+  text-decoration: none; /* Sin decoración de texto */
+  color: #fff; /* Color de texto */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  box-sizing: border-box; /* Caja de borde */
+  margin: 0 auto; /* Centrado horizontal */
+  border: 3px solid #fff; /* Borde */
+  border-radius: 3px; /* Borde redondeado */
+  -webkit-border-radius: 3px; /* Borde redondeado para navegadores webkit */
+  -moz-border-radius: 3px; /* Borde redondeado para navegadores mozilla */
+  -ms-border-radius: 3px; /* Borde redondeado para navegadores microsoft */
+  -o-border-radius: 3px; /* Borde redondeado para navegadores opera */
+  transition: all 0.3s ease-in-out; /* Transición */
+  -webkit-transition: all 0.3s ease-in-out; /* Transición para navegadores webkit */
+  -moz-transition: all 0.3s ease-in-out; /* Transición para navegadores mozilla */
+  -ms-transition: all 0.3s ease-in-out; /* Transición para navegadores microsoft */
+  -o-transition: all 0.3s ease-in-out; /* Transición para navegadores opera */
+}
+
+/* Configuración para el botón de los resultados al pasar el mouse */
+#calculate-result-button:hover,
+#calculate-submit-button {
+  background: #fff; /* Fondo blanco */
+  color: #000; /* Color de texto */
+}
+
+/* Configuración para el botón de calcular al pasar el mouse */
+#calculate-submit-button:hover {
+  background: transparent; /* Fondo transparente */
+  color: #fff; /* Color de texto */
+  border: 3px solid #fff; /* Borde */
+}
+
+/* Configuración para el contenedor de errores */
+#calculate-submit-button {
+  margin: 0; /* Sin margen */
+  width: 100% !important; /* Ancho del elemento */
+}
+
+/* Configuración para el contenedor de errores */
+#error-container,
+#error-container-php {
+  display: none; /* Ocultar */
+  background: rgba(255, 0, 0, 0.5); /* Fondo con transparencia */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  -webkit-border-radius: 5px; /* Borde redondeado para navegadores webkit */
+  -moz-border-radius: 5px; /* Borde redondeado para navegadores mozilla */
+  -ms-border-radius: 5px; /* Borde redondeado para navegadores microsoft */
+  -o-border-radius: 5px; /* Borde redondeado para navegadores opera */
+  box-sizing: border-box; /* Caja de borde */
+}
+
+/* Configuración para el mensaje de error */
+#error-container-php {
+  display: block; /* Mostrar */
+}
+
+/* Configuración para el mensaje de error */
+#error-message {
+  margin: 0; /* Sin margen */
+}
+
+/* Configuración para el span del titulo del formulario */
+#form-title span {
+  display: block; /* Mostrar como bloque */
+  font-size: 1.5rem; /* Tamaño de fuente */
+  font-weight: normal; /* Grosor de fuente */
+  margin-top: 0.5rem; /* Espaciado superior */
+  color: #ccc; /* Color de texto */
+}
+
+/* Configuración para el formulario de calcular */
+#calculator-form {
+  display: flex; /* Mostrar como flex */
+  flex-direction: column; /* Dirección de los elementos */
+  justify-content: center; /* Justificar el espacio entre los elementos */
+  gap: 1rem; /* Espaciado entre elementos */
+}
+
+/* Configuración para los elementos del formulario */
+label {
+  font-size: 1.2rem;  /* Tamaño de fuente */
+  color: #ccc; /* Color de texto */
+}
+
+/* Configuración para los input y los select */
+input,
+select {
+  width: 100%; /* Ancho del elemento */
+  padding: 0.5rem; /* Espaciado interno */
+  box-sizing: border-box; /* Caja de borde */ 
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+/* Configuración para el wrapper del checkbox */
+.checkbox-wrapper {
+  display: flex; /* Mostrar como flex */
+  align-items: center; /* Alineación centrada */
+  gap: 0.5rem; /* Espaciado entre elementos */
+}
+
+/* Configuración para el wrapper del checkbox */
+.checkbox-wrapper.use-user-data {
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+
+/* Configuración para el checkbox */
+.checkbox-wrapper input[type="checkbox"] {
+  width: 1.1rem; /* Ancho del elemento */
+  height: 1.1rem; /* Alto del elemento */
+  margin: 0; /* Sin margen */
+}
+
+/* Configuración para el label del checkbox */
+.checkbox-wrapper label {
+  font-size: 1rem; /* Tamaño de fuente */
+  margin: 0; /* Sin margen */
+}
+
+/* Configuración para el botón de calcular */
+input[type="submit"] {
+  background: #0073e6; /* Fondo */
+  color: #fff; /* Color de texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cursor de puntero */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  border-radius: 5px; /* Borde redondeado */
+  -webkit-border-radius: 5px; /* Borde redondeado para navegadores webkit */
+  -moz-border-radius: 5px; /* Borde redondeado para navegadores mozilla */
+  -ms-border-radius: 5px; /* Borde redondeado para navegadores microsoft */ 
+  -o-border-radius: 5px; /* Borde redondeado para navegadores opera */
+  transition: background 0.3s ease-in-out; /* Transición */
+  -webkit-transition: background 0.3s ease-in-out;  /* Transición para navegadores webkit */
+  -moz-transition: background 0.3s ease-in-out;  /* Transición para navegadores mozilla */
+  -ms-transition: background 0.3s ease-in-out; /* Transición para navegadores microsoft */
+  -o-transition: background 0.3s ease-in-out; /* Transición para navegadores opera */
+}
+
+/* Configuración para el botón de calcular al pasar el mouse */
+input[type="submit"]:hover {
+  background: #005ab1; /* Fondo */
+}
+
+/* Configuración para el botón de calcular al pasar el mouse */
+input[type="submit"]:last-of-type {
+  text-wrap: wrap; /* Ajuste de texto */
+}
+
+/* Configuración para el footer */
+footer {
+  background: none; /* Fondo transparente */
+}
+
+/* Media para las pantallas menores a 380px */
+@media screen and (max-width: 380px) {
+  /* Títulos de los forms */
+  #form-title,
+  #calculate-result-title {
+    font-size: 2rem; /* Tamaño de fuente */
+  }
+
+  /* Span de los títulos de los forms */
+  #form-title span {
+    font-size: 1.2rem; /* Tamaño de fuente */
+  }
+}
+
+/* Media para las pantallas menores a 320px */
+@media screen and (max-width: 320px) {
+  /* Títulos de los forms */
+  #form-title,
+  #calculate-result-title {
+    font-size: 1.5rem; /* Tamaño de fuente */
+  }
+
+  /* Span de los títulos de los forms */
+  #form-title span {
+    font-size: 1rem; /* Tamaño de fuente */
+  }
+
+  /* Formularios */
+  #calculator-form,
+  .calculate-result-container {
+    gap: 0.5rem; /* Espaciado entre elementos */
+  }
+
+  /* Formularios */
+  label {
+    font-size: 1rem; /* Tamaño de fuente */
+  }
+
+  /* Formularios */
+  input,
+  select {
+    padding: 0.3rem; /* Espaciado interno */
+  }
+
+  /* Formularios */
+  .checkbox-wrapper label {
+    font-size: 0.9rem; /* Tamaño de fuente */
+  }
+
+  /* Formularios */
+  input[type="submit"] {
+    font-size: 0.9rem; /* Tamaño de fuente */
+  }
+}

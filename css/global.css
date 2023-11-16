@@ -1,0 +1,56 @@
+/* Configuración de la apariencia de la barra de desplazamiento */
+html {
+  scrollbar-gutter: stable; /* Mantiene el espacio para la barra de desplazamiento incluso cuando no se muestra */
+}
+
+/* Estilos para las imágenes */
+img {
+  max-width: 100%; /* Las imágenes se ajustan al ancho del contenedor */
+}
+
+/* Estilos generales para el cuerpo del documento */
+body {
+  font-family: "Montserrat", sans-serif; /* Fuente principal para el cuerpo del documento */
+}
+
+/* Estilos para la sección principal */
+main {
+  min-height: 100vh; /* Altura mínima del 100% del alto de la ventana gráfica (viewport height) */
+}
+
+/* Reglas de medios para ajustar el tamaño de fuente según el ancho de la pantalla */
+
+/* Para pantallas con un ancho mínimo de 1920px */
+@media only screen and (min-width: 1920px) {
+  body {
+    font-size: 22px; /* Tamaño de fuente de 22px */
+  }
+}
+
+/* Para pantallas con un ancho máximo de 1919px */
+@media only screen and (max-width: 1919px) {
+  body {
+    font-size: 20px; /* Tamaño de fuente de 20px */
+  }
+}
+
+/* Para pantallas con un ancho máximo de 1680px */
+@media only screen and (max-width: 1680px) {
+  body {
+    font-size: 18px; /* Tamaño de fuente de 18px */
+  }
+}
+
+/* Para pantallas con un ancho máximo de 1366px */
+@media only screen and (max-width: 1366px) {
+  body {
+    font-size: 16px; /* Tamaño de fuente de 16px */
+  }
+}
+
+/* Para pantallas con un ancho máximo de 1024px */
+@media only screen and (max-width: 1024px) {
+  body {
+    font-size: 14px; /* Tamaño de fuente de 14px */
+  }
+}

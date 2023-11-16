@@ -1,0 +1,213 @@
+/* Estilos para el contenido principal en la página */
+main {
+  padding: 3rem 2rem; /* Relleno de 3 rem arriba/abajo y 2 rem izquierda/derecha */
+  box-sizing: border-box; /* La anchura y altura incluyen el borde y el relleno */
+  margin: 0 auto; /* Margen automático izquierdo y derecho para centrar horizontalmente */
+  line-height: 1.5; /* Altura de línea de 1.5 (espaciado entre líneas) */
+}
+
+/* Estilos para la sección de publicaciones */
+#publications {
+  display: flex; /* Usa el modelo de caja flexible */
+  gap: 2rem; /* Espacio entre elementos de 2 rem */
+  flex-direction: column; /* Orientación de elementos como columna */
+  align-items: center; /* Centra elementos horizontalmente */
+  justify-content: center; /* Centra elementos verticalmente */
+}
+
+/* Estilos para cada publicación */
+.publication {
+  width: 100%;
+  max-width: 1200px; /* Anchura máxima de 1200px */
+  background: #fff; /* Fondo blanco */
+  box-shadow: 2px 2px 10px rgb(0 0 0 / 50%); /* Sombra con color y opacidad */
+  border-radius: 0.5rem; /* Borde redondeado de 0.5rem */
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+/* Estilos para el encabezado de cada publicación */
+.publication-header {
+  background: #efefef; /* Fondo gris claro (#efefef) */
+  padding: 1rem; /* Relleno de 1 rem en todos los lados */
+  box-sizing: border-box; /* La anchura y altura incluyen el borde y el relleno */
+  display: flex; /* Usa el modelo de caja flexible */
+  gap: 0.5rem; /* Espacio entre elementos de 0.5 rem */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben */
+  align-items: center; /* Centra elementos horizontalmente */
+  justify-content: space-between; /* Espacio entre elementos a lo largo del eje principal */
+  border-bottom: 1px solid #ddd; /* Borde inferior de 1 píxel sólido */
+  border-radius: 0.5rem 0.5rem 0 0; /* Borde redondeado en la parte superior */
+  -webkit-border-radius: 0.5rem 0.5rem 0 0;
+  -moz-border-radius: 0.5rem 0.5rem 0 0;
+  -ms-border-radius: 0.5rem 0.5rem 0 0;
+  -o-border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Estilos para el nombre de usuario en el encabezado de la publicación */
+.publication-header-username {
+  font-size: 1.3rem; /* Tamaño de fuente de 1.3 rem */
+  font-weight: 600; /* Peso de fuente 600 (bold) */
+  color: #09f; /* Color azul (#09f) */
+  transition: 300ms ease-in-out color; /* Transición suave del color en 300ms */
+  -webkit-transition: 300ms ease-in-out color;
+  -moz-transition: 300ms ease-in-out color;
+  -ms-transition: 300ms ease-in-out color;
+  -o-transition: 300ms ease-in-out color;
+}
+
+/* Estilos para el nombre de usuario al pasar el cursor sobre él */
+.publication-header-username:hover {
+  color: #0cf; /* Cambia el color a un tono ligeramente más claro (#0cf) al pasar el cursor */
+}
+
+/* Estilos para la fecha en el encabezado de la publicación */
+.publication-header-date {
+  opacity: 0.7; /* Opacidad del 70% */
+  margin: 0; /* Sin margen */
+}
+
+/* Estilos para el cuerpo de la publicación */
+.publication-body {
+  padding: 1rem; /* Relleno de 1 rem en todos los lados */
+  box-sizing: border-box; /* La anchura y altura incluyen el borde y el relleno */
+}
+
+/* Estilos para el título en el cuerpo de la publicación */
+.publication-body-title {
+  font-size: 1.5rem; /* Tamaño de fuente de 1.5 rem */
+  font-weight: 600; /* Peso de fuente 600 (bold) */
+  color: #333; /* Color de texto gris oscuro (#333) */
+  margin: 0; /* Sin margen */
+}
+
+/* Estilos para el contenido en el cuerpo de la publicación */
+.publication-body-content {
+  font-size: 1rem; /* Tamaño de fuente de 1 rem */
+  font-weight: 400; /* Peso de fuente 400 (normal) */
+  opacity: 0.8; /* Opacidad del 80% */
+  margin: 0; /* Sin margen */
+  margin-top: 0.5rem; /* Margen superior de 0.5 rem */
+}
+
+/* Estilos para el pie de la publicación */
+.publication-footer {
+  padding: 1rem; /* Relleno de 1 rem en todos los lados */
+  box-sizing: border-box; /* La anchura y altura incluyen el borde y el relleno */
+  display: flex; /* Usa el modelo de caja flexible */
+  align-items: center; /* Centra elementos horizontalmente */
+  justify-content: space-between; /* Espacio entre elementos a lo largo del eje principal */
+  border-top: 1px solid #ddd; /* Borde superior de 1 píxel sólido */
+  background: #efefef; /* Fondo gris claro (#efefef) */
+  border-radius: 0 0 0.5rem 0.5rem; /* Borde redondeado en la parte inferior */
+  -webkit-border-radius: 0 0 0.5rem 0.5rem;
+  -moz-border-radius: 0 0 0.5rem 0.5rem;
+  -ms-border-radius: 0 0 0.5rem 0.5rem;
+  -o-border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* Estilos para los botones de reacción y comentarios en el pie de la publicación */
+.publication-footer-reaction-button,
+.publication-footer-comments-button {
+  display: flex; /* Usa el modelo de caja flexible */
+  align-items: center; /* Centra elementos horizontalmente */
+  justify-content: center; /* Centra elementos verticalmente */
+  gap: 0.5rem; /* Espacio entre elementos de 0.5 rem */
+  padding: 0.5rem; /* Relleno de 0.5 rem en todos los lados */
+  background: #fff; /* Fondo blanco */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cursor de puntero al pasar el ratón */
+  box-shadow: 2px 2px 10px rgb(0 0 0 / 20%); /* Sombra con color y opacidad */
+  transition: 300ms ease-in-out all; /* Transición suave de todos los estilos en 300ms */
+  -webkit-transition: 300ms ease-in-out all;
+  -moz-transition: 300ms ease-in-out all;
+  -ms-transition: 300ms ease-in-out all;
+  -o-transition: 300ms ease-in-out all;
+  border-radius: 0.5rem; /* Borde redondeado de 0.5rem */
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+/* Estilos para el botón de reacción al pasar el cursor sobre él */
+.publication-footer-reaction-button:hover {
+  background: #09f; /* Fondo azul (#09f) */
+  color: #fff; /* Color de texto blanco (#fff) */
+}
+
+/* Estilos para el botón de reacción cuando está deshabilitado y se pasa el cursor sobre él */
+.publication-footer-reaction-button:disabled:hover {
+  background: #fff; /* Fondo blanco */
+  color: #6d6d6d; /* Color de texto gris oscuro (#6d6d6d) */
+}
+
+/* Estilos para el botón de comentarios al pasar el cursor sobre él */
+.publication-footer-comments-button:hover {
+  background: #7c7c7c; /* Fondo gris (#7c7c7c) */
+  color: #fff; /* Color de texto blanco (#fff) */
+  cursor: default; /* Cursor predeterminado (no se puede hacer clic) */
+}
+
+/* Estilos para la sección vacía */
+.empty {
+  width: 100%;
+  max-width: 1200px; /* Anchura máxima de 1200px */
+  height: 80vh; /* Altura del 80% del área visible del dispositivo */
+  background: #efefef; /* Fondo gris claro (#efefef) */
+  box-shadow: 2px 2px 10px rgb(0 0 0 / 20%); /* Sombra con color y opacidad */
+  border-radius: 0.5rem; /* Borde redondeado de 0.5rem */
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  padding: 1rem; /* Relleno de 1 rem en todos los lados */
+  box-sizing: border-box; /* La anchura y altura incluyen el borde y el relleno */
+  display: flex; /* Usa el modelo de caja flexible */
+  align-items: center; /* Centra elementos horizontalmente */
+  justify-content: center; /* Centra elementos verticalmente */
+  flex-direction: column; /* Orientación de elementos como columna */
+}
+
+/* Estilos para la paginación */
+.pagination {
+  text-align: center; /* Alineación del texto en el centro */
+  margin-top: 20px; /* Margen superior de 20px */
+}
+
+/* Estilos para los enlaces de paginación */
+.page-link {
+  display: inline-block; /* Hace que los enlaces se muestren en línea */
+  padding: 5px 10px; /* Relleno de 5px arriba/abajo y 10px izquierda/derecha */
+  margin: 2px; /* Margen de 2px */
+  border: 1px solid #ccc; /* Borde de 1px sólido en color gris (#ccc) */
+  background-color: #fff; /* Fondo blanco */
+  color: #333; /* Color de texto gris oscuro (#333) */
+  text-decoration: none; /* Sin decoración de texto (subrayado) */
+  border-radius: 3px; /* Borde redondeado de 3px */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave de color en 0.3s */
+}
+
+/* Estilos para los enlaces de paginación al pasar el cursor sobre ellos */
+.page-link:hover {
+  background-color: #333; /* Fondo gris oscuro (#333) */
+  color: #fff; /* Color de texto blanco (#fff) */
+}
+
+/* Estilos para el enlace de página activa */
+.page-link.active {
+  background-color: #333; /* Fondo gris oscuro (#333) */
+  color: #fff; /* Color de texto blanco (#fff) */
+}
+
+/* Estilos para el enlace de página deshabilitada */
+.empty span {
+  opacity: 0.7; /* Opacidad del 70% */
+}
+
+/* Estilos para el pie de página */
+footer {
+  background: #292c2f; /* Fondo gris oscuro (#292c2f) */
+}
