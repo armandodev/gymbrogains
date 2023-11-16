@@ -135,7 +135,7 @@ if (!$isAdmin && !$isLogged) {
 
   <footer>
     <div class="footer-bottom">
-      <p>&copy; 2023 Gymbrogains - Todos los derechos reservados</p>
+      <p>&copy; 2023 Gymbrogains</p>
     </div>
   </footer>
 

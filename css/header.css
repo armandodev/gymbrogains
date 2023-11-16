@@ -77,7 +77,7 @@ header {
 /* Estilos para el enlace activo en la barra de navegación */
 .header-nav-link.active a {
   pointer-events: none; /* No se puede hacer clic en el enlace activo */
-  opacity: 0.5; /* Opacidad reducida para el enlace activo */
+  color: rgb(var(--shark-500));
 }
 
 /* Estilos para el botón de menú desplegable en dispositivos móviles */
