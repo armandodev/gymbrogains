@@ -1,7 +1,7 @@
 /* Estilos para la barra de navegación en la parte superior */
 header {
-  background-color: #292c2f; /* Color de fondo */
-  color: #fff; /* Color del texto */
+  background-color: rgb(var(--shark-950)); /* Color de fondo */
+  color: rgb(var(--shark-50)); /* Color del texto */
   display: flex;
   justify-content: center;
   padding: 0.5rem 1rem; /* Espaciado interior */
@@ -20,13 +20,7 @@ header {
 .header-logo {
   display: flex;
   align-items: center;
-  width: 30%;
-  max-width: 100px;
-}
-
-/* Estilos para la imagen del logo */
-.header-logo img {
-  width: 100%;
+  width: 80px;
 }
 
 /* Estilos para los enlaces de navegación en la barra */
@@ -54,7 +48,7 @@ header {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-inout;
+  -moz-transition: opacity 0.3s ease-in-out;
   -ms-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
 }
@@ -64,7 +58,7 @@ header {
   display: flex;
   gap: 0.5rem; /* Espacio entre elementos */
   align-items: center;
-  color: #fff; /* Color del texto */
+  color: inherit; /* Color del texto */
   text-decoration: none;
   font-size: 1.1rem;
   transition: opacity 0.3s ease-in-out;
@@ -131,7 +125,7 @@ header {
   /* Estilos para cada enlace en el menú desplegable */
   .header-nav-link {
     width: 100%;
-    border-bottom: 1px solid #505050; /* Línea divisoria entre enlaces */
+    border-bottom: 1px solid rgb(var(--shark-800)); /* Línea divisoria entre enlaces */
     transition: background 0.3s ease-in-out;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
@@ -141,7 +135,7 @@ header {
 
   /* Estilos al pasar el mouse por los enlaces en el menú desplegable */
   .header-nav-link:hover {
-    background: #505050; /* Color de fondo al pasar el mouse */
+    background: rgb(var(--shark-800)); /* Color de fondo al pasar el mouse */
   }
 
   /* Estilos para el enlace activo en el menú desplegable */
@@ -159,9 +153,15 @@ header {
 
   /* Mostrar el botón de menú desplegable en dispositivos móviles */
   #menu-button {
-    display: block;
-    color: #fff;
-    font-size: 1.5rem;
+    display: flex;
+    color: inherit;
+    font-size: 1.25rem;
     cursor: pointer;
+    background: rgb(var(--shark-900));
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
   }
 }
