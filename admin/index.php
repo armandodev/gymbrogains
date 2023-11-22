@@ -2,7 +2,7 @@
 require_once "./../includes/session.php";
 
 if (!$isAdmin) {
-  /* header("location:../index.php"); */
+  header("location:../index.php");
   exit();
 }
 ?>
