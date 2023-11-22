@@ -15,13 +15,13 @@ try {
   $conn = $db->connect();
 
   // Si no se puede conectar, lanza un error
-  if(!$db->validateConnection($conn)) throw new Exception("Error de ejecución");
-  
+  if (!$db->validateConnection($conn)) throw new Exception("Error de ejecución");
+
   // Comprueba si se recibió el nombre de usuario
-  if(isset($_POST['login-username'])) $username = $_POST['login-username'];
+  if (isset($_POST['login-username'])) $username = $_POST['login-username'];
   else throw new Exception("Nombre de usuario inválido", 3); // Si no, lanza un error
   // Comprueba si se recibió la contraseña
-  if(isset($_POST['login-password'])) $password = $_POST['login-password'];
+  if (isset($_POST['login-password'])) $password = $_POST['login-password'];
   else throw new Exception("Contraseña inválida", 4); // Si no, lanza un error
 
   // Elimina los espacios en blanco del principio y el final de las variables
@@ -44,22 +44,22 @@ try {
   $stmt->bind_param("s", $username); // Asigna los parámetros a la consulta
 
   // Si no se puede ejecutar la consulta, lanza un error
-  if(!$stmt->execute()) throw new Exception("Error de ejecución");
+  if (!$stmt->execute()) throw new Exception("Error de ejecución");
 
   // Obtiene el resultado de la consulta
   $result = $stmt->get_result();
   $stmt->close(); // Cierra la consulta
 
   // Si el resultado tiene 0 filas, lanza un error
-  if($result->num_rows === 0) throw new Exception("Usuario no encontrado", 7);
-  
+  if ($result->num_rows === 0) throw new Exception("Usuario no encontrado", 7);
+
   // Obtiene el salt y la contraseña del usuario
   $row = $result->fetch_assoc();
   $salt = $row['Salt']; // Salt
   $hashedPassword = $row['Password']; // Contraseña
 
   // Comprueba si la contraseña es correcta
-  if(!password_verify($password . $salt, $hashedPassword)) throw new Exception("Contraseña incorrecta", 8);
+  if (!password_verify($password . $salt, $hashedPassword)) throw new Exception("Contraseña incorrecta", 8);
 
   // Prepara la consulta para obtener los datos del usuario
   $sql = "SELECT UserId, Name, Username, BirthDate, Goals, Role, Gender, GenderIdentity FROM users WHERE username = ?";
@@ -67,7 +67,7 @@ try {
   $stmt->bind_param("s", $username); // Asigna los parámetros a la consulta
 
   // Si no se puede ejecutar la consulta, lanza un error
-  if(!$stmt->execute()) throw new Exception("Error de ejecución");
+  if (!$stmt->execute()) throw new Exception("Error de ejecución");
 
   // Obtiene el resultado de la consulta
   $result = $stmt->get_result();
