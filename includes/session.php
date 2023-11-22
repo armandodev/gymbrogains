@@ -26,14 +26,5 @@ if (isset($_SESSION['user']) && isset($_SESSION['user']['UserId'])) {
   exit();
 }
 
-if (isset($_SESSION['user']) && $_SESSION['user']['Role'] == 0) {
-  $isAdmin = true;
-} else {
-  $isAdmin = false;
-}
-
-if (isset($_SESSION['user'])) {
-  $isLogged = true;
-} else {
-  $isLogged = false;
-}
+$isLogged = isset($_SESSION['user']) && isset($_SESSION['user']['UserId']);
+$isAdmin = isset($_SESSION['user']) && isset($_SESSION['user']['UserId']) && $_SESSION['user']['IsAdmin'] == 1;

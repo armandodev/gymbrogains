@@ -1,8 +1,8 @@
 <?php
 require_once "./../includes/session.php";
 
-if (!$isAdmin && !$isLogged) {
-  header("location:../index.php");
+if (!$isAdmin) {
+  /* header("location:../index.php"); */
   exit();
 }
 ?>
@@ -57,7 +57,7 @@ if (!$isAdmin && !$isLogged) {
             </a>
           </li>
           <li class="header-nav-link">
-            <a href="./../includes/logout.php">
+            <a href="./../index.php">
               <span class="material-icons"> public </span>
               Publica
             </a>
