@@ -46,7 +46,7 @@ header {
 }
 
 /* Estilos para el fondo oscuro del menú desplegable */
-#menu-hide-bg {
+#hide-menu-bg {
   position: absolute;
   top: 0;
   right: 0;
@@ -115,7 +115,7 @@ header {
 }
 
 /* Estilos para el botón de menú desplegable en dispositivos móviles */
-#menu-button {
+#show-menu {
   cursor: pointer;
   background: rgb(var(--shark-900));
   display: flex;
@@ -136,6 +136,6 @@ header {
 }
 
 /* Estilos al pasar el mouse por el botón de menú desplegable */
-#menu-button:hover {
+#show-menu:hover {
   opacity: 0.8; /* Opacidad al pasar el mouse */
 }

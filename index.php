@@ -56,7 +56,7 @@ require_once __DIR__ . "/includes/session.php";
         </a>
       </div>
       <nav class="header-nav">
-        <div id="menu-hide-bg"></div>
+        <div id="hide-menu-bg"></div>
         <ul class="header-nav-links" id="menu">
           <li class="header-nav-link active">
             <a href="./index.php">
@@ -116,7 +116,7 @@ require_once __DIR__ . "/includes/session.php";
         </ul>
       </nav>
 
-      <button id="menu-button">
+      <button id="show-menu">
         <span class="material-icons"> menu </span>
       </button>
     </div>
