@@ -3,7 +3,7 @@ class Database
 {
   // Datos de configuración de la base de datos
   private $host = "localhost"; // Host de la base de datos
-  private $database = "latest-gymbrogains-db"; // Nombre de la base de datos
+  private $database = "gymbrogains"; // Nombre de la base de datos
   private $username = "root"; // Nombre de usuario de la base de datos
   private $password = ""; // Contraseña de la base de datos
 
