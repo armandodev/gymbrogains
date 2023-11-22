@@ -25,13 +25,23 @@ header {
 
 /* Estilos para los enlaces de navegación en la barra */
 .header-nav-links {
-  display: flex;
-  gap: 1rem; /* Espacio entre enlaces */
+  background: #292c2f; /* Fondo del menú desplegable */
+  display: none;
+  flex-direction: column; /* Diseño de columna para los enlaces */
   align-items: center;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  right: -80%; /* Inicialmente oculto en el lado derecho */
+  width: 80%; /* Ancho del menú desplegable */
+  height: 100vh;
   list-style: none;
   padding: 0;
   margin: 0;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   z-index: 100; /* Capa z para la superposición */
 }
 
@@ -53,20 +63,44 @@ header {
   -o-transition: opacity 0.3s ease-in-out;
 }
 
+.header-nav-link {
+  width: 100%;
+  border-bottom: 1px solid rgb(var(--shark-800)); /* Línea divisoria entre enlaces */
+  transition: background 0.3s ease-in-out;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  -ms-transition: background 0.3s ease-in-out;
+  -o-transition: background 0.3s ease-in-out;
+}
+
+/* Estilos al pasar el mouse por los enlaces en el menú desplegable */
+.header-nav-link:hover {
+  background: rgb(var(--shark-800)); /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para el enlace activo en el menú desplegable */
+.header-nav-link.active:hover {
+  background: none; /* Eliminar el fondo al pasar el mouse sobre el enlace activo */
+}
+
 /* Estilos para los enlaces de navegación en la barra */
 .header-nav-link a {
   display: flex;
   gap: 0.5rem; /* Espacio entre elementos */
   align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  line-height: 2;
   color: inherit; /* Color del texto */
-  text-decoration: none;
   font-size: 1.1rem;
+  text-decoration: none;
   transition: opacity 0.3s ease-in-out;
-  box-sizing: border-box;
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
   -ms-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
+  box-sizing: border-box;
 }
 
 /* Estilos al pasar el mouse por los enlaces de navegación */
@@ -82,86 +116,26 @@ header {
 
 /* Estilos para el botón de menú desplegable en dispositivos móviles */
 #menu-button {
-  background: transparent;
+  cursor: pointer;
+  background: rgb(var(--shark-900));
+  display: flex;
   border: none;
   cursor: pointer;
-  display: none; /* Inicialmente oculto */
+  font-size: 1.25rem;
+  color: inherit;
   transition: opacity 0.5s ease-in-out;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
   -ms-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }
 
 /* Estilos al pasar el mouse por el botón de menú desplegable */
 #menu-button:hover {
   opacity: 0.8; /* Opacidad al pasar el mouse */
-}
-
-/* Reglas de medios para dispositivos con un ancho máximo de 768px (pantallas pequeñas) */
-@media screen and (max-width: 768px) {
-  /* Ocultar enlaces de navegación en la barra de navegación */
-  .header-nav-links {
-    display: none;
-  }
-
-  /* Estilos para el menú desplegable en pantallas pequeñas */
-  .header-nav-links {
-    gap: 0;
-    background: #292c2f; /* Fondo del menú desplegable */
-    flex-direction: column; /* Diseño de columna para los enlaces */
-    position: absolute;
-    top: 0;
-    right: -80%; /* Inicialmente oculto en el lado derecho */
-    width: 80%; /* Ancho del menú desplegable */
-    height: 100vh;
-    transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-  }
-
-  /* Estilos para cada enlace en el menú desplegable */
-  .header-nav-link {
-    width: 100%;
-    border-bottom: 1px solid rgb(var(--shark-800)); /* Línea divisoria entre enlaces */
-    transition: background 0.3s ease-in-out;
-    -webkit-transition: background 0.3s ease-in-out;
-    -moz-transition: background 0.3s ease-in-out;
-    -ms-transition: background 0.3s ease-in-out;
-    -o-transition: background 0.3s ease-in-out;
-  }
-
-  /* Estilos al pasar el mouse por los enlaces en el menú desplegable */
-  .header-nav-link:hover {
-    background: rgb(var(--shark-800)); /* Color de fondo al pasar el mouse */
-  }
-
-  /* Estilos para el enlace activo en el menú desplegable */
-  .header-nav-link.active:hover {
-    background: none; /* Eliminar el fondo al pasar el mouse sobre el enlace activo */
-  }
-
-  /* Estilos para los enlaces de navegación en el menú desplegable */
-  .header-nav-link a {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    line-height: 2;
-  }
-
-  /* Mostrar el botón de menú desplegable en dispositivos móviles */
-  #menu-button {
-    display: flex;
-    color: inherit;
-    font-size: 1.25rem;
-    cursor: pointer;
-    background: rgb(var(--shark-900));
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
-  }
 }
