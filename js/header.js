@@ -1,6 +1,8 @@
 const showMenu = (menu, hideMenuBg) => {
+  $(document.body).css('overflow', 'hidden');
   $(menu).css('display', 'flex');
   $(hideMenuBg).css('display', 'block');
+  window.scrollTo(0, 0);
   setTimeout(() => {
     $(menu).css('right', 0);
     $(menu).css('opacity', 1);

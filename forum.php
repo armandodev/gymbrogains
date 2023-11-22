@@ -40,86 +40,96 @@ $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foro | Gymbrogains</title>
 
-    <link rel="stylesheet" href="./fonts/css/index.css" />
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/forum.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foro | Gymbrogains</title>
 
-    <link rel="icon" href="./favicon.ico" />
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-        <div class="header-logo">
-          <a href="./index.php">
-            <img src="./images/logo/white.webp" alt="Gymbrogains" />
-          </a>
-        </div>
-        <nav class="header-nav">
-          <div id="menu-hide-bg"></div>
-          <ul class="header-nav-links" id="menu">
-            <li class="header-nav-link">
-              <a href="./index.php">Inicio</a>
-            </li>
-            <li class="header-nav-link">
-              <a href="./exercises.php">Ejercicios</a>
-            </li>
-            <li class="header-nav-link">
-              <a href="./calculator.php">Calculadora</a>
-            </li>
-            <li class="header-nav-link active">
-              <a href="./forum.php">Foro</a>
-            </li>
-            <li class="header-nav-link">
-              <a href="./profile.php">
-                <span class="material-icons"> account_circle </span>
-                <span id="profile-nav"></span>
-              </a>
-            </li>
-            <li class="header-nav-link">
-              <a href="./forum-form.php">
-                <span class="material-icons"> add </span>
-                <span id="forum-form"></span>
-              </a>
-            </li>
-            <?php if ($_SESSION['user']['Role'] == 0) { ?>
+  <link rel="stylesheet" href="./fonts/css/index.css" />
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/forum.css" />
+
+  <link rel="icon" href="./favicon.ico" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="./index.php">
+          <img src="./images/logo/white.webp" alt="Gymbrogains" />
+        </a>
+      </div>
+      <nav class="header-nav">
+        <div id="hide-menu-bg"></div>
+        <ul class="header-nav-links" id="menu">
+          <li class="header-nav-link active">
+            <a href="./index.php">
+              <span class="material-icons"> home </span>
+              Inicio
+            </a>
+          </li>
+          <li class="header-nav-link">
+            <a href="./exercises.php">
+              <span class="material-icons"> fitness_center </span>
+              Ejercicios
+            </a>
+          </li>
+          <li class="header-nav-link">
+            <a href="./calculator.php">
+              <span class="material-icons"> calculate </span>
+              Calculadora
+            </a>
+          </li>
+          <li class="header-nav-link">
+            <a href="./forum.php">
+              <span class="material-icons"> forum </span>
+              Foro
+            </a>
+          </li>
+          <li class="header-nav-link">
+            <a href="./profile.php">
+              <span class="material-icons"> account_circle </span>
+              Perfil
+            </a>
+          </li>
+          <?php if ($_SESSION['user']['Role'] == 0) { ?>
             <li class="header-nav-link">
               <a href="./admin/index.php">
                 <span class="material-icons"> admin_panel_settings </span>
-                <span id="admin-nav"></span>
+                Administración
               </a>
             </li>
-            <?php 
-            } ?>
-          </ul>
-        </nav>
+          <?php } ?>
+          <li class="header-nav-link">
+            <a href="./forum-form.php">
+              <span class="material-icons"> add </span>
+              Publicar
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-        <button id="menu-button">
-          <span class="material-icons"> menu </span>
-        </button>
-      </div>
-    </header>
+      <button id="show-menu">
+        <span class="material-icons"> menu </span>
+      </button>
+    </div>
+  </header>
 
-    <main>
+  <main>
     <section id="publications">
-        <?php if ($result->num_rows > 0) { ?>
-          <?php foreach ($publications as $publication) {
-            $buttonId = $publication["TopicID"];
-            $userID = $publication['UserID'];
-            ?>
+      <?php if ($result->num_rows > 0) { ?>
+        <?php foreach ($publications as $publication) {
+          $buttonId = $publication["TopicID"];
+          $userID = $publication['UserID'];
+        ?>
           <article class="publication">
             <div class="publication-header">
-              <a
-              class="publication-header-username"
-              href="./profile.php?userID=<?php echo urlencode($publication['Username']) ?>"
-              >
+              <a class="publication-header-username" href="./profile.php?userID=<?php echo urlencode($publication['Username']) ?>">
                 @<?php echo $publication['Username']; ?>
               </a>
               <p class="publication-header-date">
@@ -136,25 +146,21 @@ $conn->close();
             </div>
             <div class="publication-footer">
               <?php
-                $conn = $db->connect();
+              $conn = $db->connect();
 
-                $sql = "SELECT * FROM forumlikes WHERE TopicID = ? AND UserID = ?";
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ii", $buttonId, $userID);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                $stmt->close();
-                $conn->close();
-                
-                $liked = $result->num_rows > 0 ? true : false;
+              $sql = "SELECT * FROM forumlikes WHERE TopicID = ? AND UserID = ?";
+              $stmt = $conn->prepare($sql);
+              $stmt->bind_param("ii", $buttonId, $userID);
+              $stmt->execute();
+              $result = $stmt->get_result();
+              $stmt->close();
+              $conn->close();
+
+              $liked = $result->num_rows > 0 ? true : false;
               ?>
-              <button
-              id="<?php echo $publication["TopicID"] ?>"
-              class="publication-footer-reaction-button"
-              <?php if ($liked) { 
-                echo "disabled";
-              } ?>
-              >
+              <button id="<?php echo $publication["TopicID"] ?>" class="publication-footer-reaction-button" <?php if ($liked) {
+                                                                                                              echo "disabled";
+                                                                                                            } ?>>
                 <span class="material-icons"> thumb_up </span>
                 <span id="<?php echo $publication["TopicID"] ?>-count" class="publication-footer-reactions-count">
                   <?php echo $publication['Likes']; ?>
@@ -162,35 +168,36 @@ $conn->close();
               </button>
             </div>
           </article>
-          <?php } ?>
-          <div class="pagination">
-            <?php
-            $i = 1;
-            do { ?>
-              <a href="forum.php?page=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a>
-              <?php 
-              $i++;
-            } while ($i <= $total_pages) ?>
-          </div>
-        <?php } else { ?>
-          <p class="empty">
-            <span>
-              No hay publicaciones en el foro, <a href="./forum-form.php">¡publica una!</a>
-            </span>
-          </p>
         <?php } ?>
-      </section>
-    </main>
+        <div class="pagination">
+          <?php
+          $i = 1;
+          do { ?>
+            <a href="forum.php?page=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a>
+          <?php
+            $i++;
+          } while ($i <= $total_pages) ?>
+        </div>
+      <?php } else { ?>
+        <p class="empty">
+          <span>
+            No hay publicaciones en el foro, <a href="./forum-form.php">¡publica una!</a>
+          </span>
+        </p>
+      <?php } ?>
+    </section>
+  </main>
 
-    <footer>
-      <div class="footer-bottom">
-        <p>&copy; 2023 Gymbrogains - Todos los derechos reservados</p>
-      </div>
-    </footer>
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Gymbrogains - Todos los derechos reservados</p>
+    </div>
+  </footer>
 
-    <script src="./js/jquery/jquery-3.7.1.min.js"></script>
-    <script src="./js/header.js"></script>
-    <script src="./js/pagination.js"></script>
-    <script src="./js/likes.js"></script>
-  </body>
+  <script src="./js/jquery/jquery-3.7.1.min.js"></script>
+  <script src="./js/header.js"></script>
+  <script src="./js/pagination.js"></script>
+  <script src="./js/likes.js"></script>
+</body>
+
 </html>

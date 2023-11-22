@@ -34,143 +34,146 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicios | Gymbrogains</title>
 
-    <link rel="stylesheet" href="./fonts/css/index.css" />
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/exercises-list.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicios | Gymbrogains</title>
 
-    <link rel="icon" href="./favicon.ico" />
-  </head>
+  <link rel="stylesheet" href="./fonts/css/index.css" />
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/exercises-list.css" />
 
-  <body>
-    <header>
-      <div class="header-container">
-        <div class="header-logo">
-          <a href="./index.php">
-            <img src="./images/logo/white.webp" alt="Gymbrogains" />
-          </a>
-        </div>
-        <nav class="header-nav">
-          <div id="menu-hide-bg"></div>
-          <ul class="header-nav-links" id="menu">
-            <li class="header-nav-link">
-              <a href="./index.php">Inicio</a>
-            </li>
-            <li class="header-nav-link active">
-              <a href="./exercises.php">Ejercicios</a>
-            </li>
-            <li class="header-nav-link">
-              <a href="./calculator.php">Calculadora</a>
-            </li>
-            <?php
+  <link rel="icon" href="./favicon.ico" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="./index.php">
+          <img src="./images/logo/white.webp" alt="Gymbrogains" />
+        </a>
+      </div>
+      <nav class="header-nav">
+        <div id="hide-menu-bg"></div>
+        <ul class="header-nav-links" id="menu">
+          <li class="header-nav-link">
+            <a href="./index.php">
+              <span class="material-icons"> home </span>
+              Inicio
+            </a>
+          </li>
+          <li class="header-nav-link active">
+            <a href="./exercises.php">
+              <span class="material-icons"> fitness_center </span>
+              Ejercicios
+            </a>
+          </li>
+          <li class="header-nav-link">
+            <a href="./calculator.php">
+              <span class="material-icons"> calculate </span>
+              Calculadora
+            </a>
+          </li>
+          <?php
           if (isset($_SESSION["user"])) { ?>
             <li class="header-nav-link">
-              <a href="./forum.php">Foro</a>
+              <a href="./forum.php">
+                <span class="material-icons"> forum </span>
+                Foro
+              </a>
             </li>
             <li class="header-nav-link">
               <a href="./profile.php">
                 <span class="material-icons"> account_circle </span>
-                <span id="profile-nav"></span>
+                Perfil
               </a>
             </li>
             <?php if ($_SESSION['user']['Role'] == 0) { ?>
-            <li class="header-nav-link">
-              <a href="./admin/index.php">
-                <span class="material-icons"> admin_panel_settings </span>
-                <span id="admin-nav"></span>
-              </a>
-            </li>
+              <li class="header-nav-link">
+                <a href="./admin/index.php">
+                  <span class="material-icons"> admin_panel_settings </span>
+                  Administración
+                </a>
+              </li>
             <?php
             }
           } else { ?>
             <li class="header-nav-link">
               <a href="./login.php">
                 <span class="material-icons"> login </span>
-                <span id="login-nav"></span>
+                Iniciar sesión
               </a>
             </li>
             <li class="header-nav-link">
               <a href="./signup.php">
                 <span class="material-icons"> person_add </span>
-                <span id="signup-nav"></span>
+                Regístrate
               </a>
             </li>
-            <?php } ?>
-          </ul>
-        </nav>
+          <?php } ?>
+        </ul>
+      </nav>
 
-        <button id="menu-button">
-          <span class="material-icons"> menu </span>
-        </button>
-      </div>
-    </header>
+      <button id="show-menu">
+        <span class="material-icons"> menu </span>
+      </button>
+    </div>
+  </header>
 
-    <main>
-      <section id="exercises-list-section">
-        <?php if (!isset($error_message)) { ?>
+  <main>
+    <section id="exercises-list-section">
+      <?php if (!isset($error_message)) { ?>
         <ul id="exercises-list">
           <?php foreach ($exercises as $exercise) { ?>
-          <li class="exercise">
-            <div class="exercise-category-name">
-              <img
-                src="./images/exercises/icons/<?php echo $exercise['Category']; ?>.webp"
-                alt="<?php echo $exercise['ExerciseName']; ?>, <?php echo $exercise['Category'] ?>"
-              />
-              <h2 class="exercise-name">
-                <?php echo $exercise['ExerciseName']; ?>
-              </h2>
-            </div>
-            <div class="exercise-info">
-              <p class="exercise-rating">
-                <span class="material-icons"> star </span>
-                <span class="exercise-rating-value"
-                  ><?php echo $exercise['AverageRating']; ?></span
-                >
-              </p>
-              <a
-                href="./exercise.php?id=<?php echo $exercise['ExerciseID']; ?>"
-                class="exercise-button"
-                >Ver ejercicio</a
-              >
-            </div>
-          </li>
+            <li class="exercise">
+              <div class="exercise-category-name">
+                <img src="./images/exercises/icons/<?php echo $exercise['Category']; ?>.webp" alt="<?php echo $exercise['ExerciseName']; ?>, <?php echo $exercise['Category'] ?>" />
+                <h2 class="exercise-name">
+                  <?php echo $exercise['ExerciseName']; ?>
+                </h2>
+              </div>
+              <div class="exercise-info">
+                <p class="exercise-rating">
+                  <span class="material-icons"> star </span>
+                  <span class="exercise-rating-value"><?php echo $exercise['AverageRating']; ?></span>
+                </p>
+                <a href="./exercise.php?id=<?php echo $exercise['ExerciseID']; ?>" class="exercise-button">Ver ejercicio</a>
+              </div>
+            </li>
         </ul>
 
-        <?php } ?>
-        <?php } else { ?>
-        <div class="error-message-container">
-          <p class="error-message"><?php echo $error_message; ?></p>
-        </div>
-        <?php } ?>
-      </section>
-      <div class="pagination">
-        <?php
+      <?php } ?>
+    <?php } else { ?>
+      <div class="error-message-container">
+        <p class="error-message"><?php echo $error_message; ?></p>
+      </div>
+    <?php } ?>
+    </section>
+    <div class="pagination">
+      <?php
       $i = 1;
       do { ?>
-        <a href="exercises.php?page=<?php echo $i; ?>" class="page-link"
-          ><?php echo $i; ?></a
-        >
-        <?php
+        <a href="exercises.php?page=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a>
+      <?php
         $i++;
       } while ($i <= $total_pages) ?>
-      </div>
-    </main>
+    </div>
+  </main>
 
-    <footer>
-      <div class="footer-bottom">
-        <p>&copy; 2023 Gymbrogains - Todos los derechos reservados</p>
-      </div>
-    </footer>
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Gymbrogains - Todos los derechos reservados</p>
+    </div>
+  </footer>
 
-    <script src="./js/jquery/jquery-3.7.1.min.js"></script>
-    <script src="./js/header.js"></script>
-    <script src="./js/pagination.js"></script>
-  </body>
+  <script src="./js/jquery/jquery-3.7.1.min.js"></script>
+  <script src="./js/header.js"></script>
+  <script src="./js/pagination.js"></script>
+</body>
+
 </html>
