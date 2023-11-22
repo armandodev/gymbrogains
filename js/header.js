@@ -1,52 +1,52 @@
 const showMenu = (menu, hideMenuBg) => {
-  menu.style.display = 'flex'
-  hideMenuBg.style.display = 'block'
+  $(menu).css('display', 'flex');
+  $(hideMenuBg).css('display', 'block');
   setTimeout(() => {
-    menu.style.right = 0
-    menu.style.opacity = 1
-    hideMenuBg.style.opacity = 1
-  }, 100)
-}
+    $(menu).css('right', 0);
+    $(menu).css('opacity', 1);
+    $(hideMenuBg).css('opacity', 1);
+  }, 100);
+};
 
 const hideMenu = (menu, menuWidth, hideMenuBg) => {
-  menu.style.right = `-${menuWidth}`
-  menu.style.opacity = 0
-  hideMenuBg.style.opacity = 0
+  $(menu).css('right', `-${menuWidth}`);
+  $(menu).css('opacity', 0);
+  $(hideMenuBg).css('opacity', 0);
   setTimeout(() => {
-    menu.style.display = 'none'
-    hideMenuBg.style.display = 'none'
-  }, 500)
-}
+    $(menu).css('display', 'none');
+    $(hideMenuBg).css('display', 'none');
+  }, 500);
+};
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menu = document.getElementById('menu')
-  const hideMenuBg = document.getElementById('hide-menu-bg')
-  const showMenuBtn = document.getElementById('show-menu')
+$(document).ready(() => {
+  const menu = $('#menu');
+  const hideMenuBg = $('#hide-menu-bg');
+  const showMenuBtn = $('#show-menu');
   let menuWidth =
-    window.innerWidth > 768 
-      ? '30%' 
-      : window.innerWidth > 480
+    $(window).innerWidth() > 768
+      ? '30%'
+      : $(window).innerWidth() > 480
         ? '50%'
-        : '80%'
+        : '80%';
 
-  menu.style.width = menuWidth
+  menu.css('width', menuWidth);
 
-  showMenuBtn.addEventListener('click', () => {
-    showMenu(menu, hideMenuBg)
-  })
+  showMenuBtn.on('click', () => {
+    showMenu(menu, hideMenuBg);
+  });
 
-  hideMenuBg.addEventListener('click', () => {
-    hideMenu(menu, menuWidth, hideMenuBg)
-  })
+  hideMenuBg.on('click', () => {
+    hideMenu(menu, menuWidth, hideMenuBg);
+  });
 
-  window.addEventListener('resize', () => {
+  $(window).on('resize', () => {
     menuWidth =
-      window.innerWidth > 768
+      $(window).innerWidth() > 768
         ? '30%'
-        : window.innerWidth > 480
+        : $(window).innerWidth() > 480
           ? '50%'
-          : '80%'
-    menu.style.width = menuWidth
-    hideMenu(menu, menuWidth, hideMenuBg)
-  })
-})
+          : '80%';
+    menu.css('width', menuWidth);
+    hideMenu(menu, menuWidth, hideMenuBg);
+  });
+});
