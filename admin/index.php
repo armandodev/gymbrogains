@@ -25,30 +25,39 @@ if (!$isAdmin && !$isLogged) {
   <header>
     <div class="header-container">
       <div class="header-logo">
-        <a href="./index.php">
+        <a href="./../index.php">
           <img src="./../images/logo/white.webp" alt="Gymbrogains" />
         </a>
       </div>
       <nav class="header-nav">
-        <div id="menu-hide-bg"></div>
+        <div id="hide-menu-bg"></div>
         <ul class="header-nav-links" id="menu">
           <li class="header-nav-link active">
-            <a href="./index.php">Inicio</a>
+            <a href="./index.php">
+              <span class="material-icons"> home </span>
+              Inicio
+            </a>
           </li>
           <li class="header-nav-link">
-            <a href="./exercises.php">Ejercicios</a>
+            <a href="./exercises.php">
+              <span class="material-icons"> fitness_center </span>
+              Ejercicios
+            </a>
           </li>
           <li class="header-nav-link">
-            <a href="./calculator.php">Calculadora</a>
+            <a href="./forum.php">
+              <span class="material-icons"> forum </span>
+              Foro
+            </a>
           </li>
           <li class="header-nav-link">
-            <a href="./forum.php">Foro</a>
+            <a href="./users.php">
+              <span class="material-icons"> group </span>
+              Usuarios
+            </a>
           </li>
           <li class="header-nav-link">
-            <a href="./forum.php">Usuarios</a>
-          </li>
-          <li class="header-nav-link">
-            <a href="./../index.php">
+            <a href="./../includes/logout.php">
               <span class="material-icons"> public </span>
               Publica
             </a>
@@ -56,7 +65,7 @@ if (!$isAdmin && !$isLogged) {
         </ul>
       </nav>
 
-      <button id="menu-button">
+      <button id="show-menu">
         <span class="material-icons"> menu </span>
       </button>
     </div>
