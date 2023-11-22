@@ -17,6 +17,7 @@ const hideMenu = (menu, menuWidth, hideMenuBg) => {
   setTimeout(() => {
     $(menu).css('display', 'none');
     $(hideMenuBg).css('display', 'none');
+    $(document.body).css('overflow', 'auto');
   }, 500);
 };
 
