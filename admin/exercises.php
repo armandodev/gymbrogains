@@ -17,6 +17,46 @@
 </head>
 
 <body>
+  <dialog class="modal" id="modal-form" open>
+    <form action="./" id="insert-exercise" class="form">
+      <fieldset class="fieldset">
+        <legend class="legend">Información</legend>
+
+        <label class="form-label">
+          Nombre del ejercicio
+          <input type="text" class="exercise-input">
+        </label>
+
+        <label class="form-label">
+          Descripción
+          <input type="text" class="form-input">
+        </label>
+
+        <label class="form-label">
+          Categoría
+          <select class="select-category form-select">
+            <option value="Gimnasio">Gimnasio</option>
+            <option value="Calistenia">Calistenia</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <legend class="legend">
+          Multimedia
+        </legend>
+
+        <label class="form-label">
+          Imagen
+          <input type="file" class="form-input">
+        </label>
+        <label class="form-label">
+          <input type="submit" class="form-input">
+        </label>
+      </fieldset>
+    </form>
+  </dialog>
+
   <header>
     <div class="header-container">
       <div class="header-logo">
@@ -57,6 +97,12 @@
               Publica
             </a>
           </li>
+          <li class="header-nav-link">
+            <a href="./add-exercise.php">
+              <span class="material-icons"> add </span>
+              Subir un ejercicio
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -68,40 +114,7 @@
 
   <main id="main">
     <div class="content-wrapper">
-      <form action="./" id="insert-exercise" class="form">
-        <fieldset class="fieldset">
-          <legend class="legend">Información</legend>
 
-          <label class="form-label">
-            Nombre del ejercicio
-            <input type="text" class="exercise-input">
-          </label>
-
-          <label class="form-label">
-            Descripción
-            <input type="text" class="form-input">
-          </label>
-
-          <label class="form-label">
-            Categoría
-            <select class="select-category form-select">
-              <option value="Gimnasio">Gimnasio</option>
-              <option value="Calistenia">Calistenia</option>
-            </select>
-          </label>
-        </fieldset>
-
-        <fieldset class="fieldset">
-          <legend class="legend">
-            Multimedia
-          </legend>
-
-          <label class="form-label">
-            Imagen
-            <input type="file" class="form-input">
-          </label>
-        </fieldset>
-      </form>
     </div>
   </main>
 

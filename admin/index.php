@@ -147,6 +147,7 @@
     <footer>
       <div class="footer-bottom">
         <p>&copy; 2023 Gymbrogains</p>
+        <p>Delaimy es trap</p>
       </div>
     </footer>
 
