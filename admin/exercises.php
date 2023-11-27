@@ -74,8 +74,8 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
   <?php
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombreEjercicio = $_POST['name-exercises'];
-    $descripcion = $_POST['description'];
-    $categoria = $_POST['category'];
+    $description = $_POST['description'];
+    $category = $_POST['category'];
     // procesa los datos aquí
   }
   ?>
