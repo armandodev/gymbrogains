@@ -1,33 +1,66 @@
-#main {
-}
-
-.content-wrapper {
-  /*  */
-}
-
 .modal {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  border: none;
 }
 
 .form {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
 }
 
 .fieldset {
+  display: flex;
+  flex-direction: column;
 }
 
 .legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .form-label {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
 }
 
-.exercise-input {
+.exercise-input,
+.form-input,
+.form-select,
+.form-input-file {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
 }
 
-.form-input {
-}
-
-.select-category {
-}
-
-.form-select {
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: none;
+  border: none;
 }

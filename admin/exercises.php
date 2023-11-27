@@ -1,6 +1,14 @@
 <!-- Subida de ejercicios junto con la imagen
     Nombre ejercicio descripción y categoría y imagen
 -->
+<?php
+require_once "./../includes/session.php";
+$conn = $db->connect();
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+$users = $result->fetch_all(MYSQLI_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,11 +22,54 @@
   <link rel="stylesheet" href="./../css/global.css">
   <link rel="stylesheet" href="./../css/header.css">
   <link rel="stylesheet" href="./../css/footer.css">
+  <link rel="stylesheet" href="./css/exercises.css">
+
+  <link rel="shortcut icon" href="./../favicon.ico" type="image/x-icon">
 </head>
 
 <body>
   <dialog class="modal" id="modal-form" open>
-    <form action="./" id="insert-exercise" class="form">
+    <form action="./" method="post" id="insert-exercise" class="form">
+      <button class="modal-close" id="modal-close">
+        <span class="material-icons"> close </span>
+      </button>
+      <?php
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        if (file_exists($target_file)) {
+          echo "Lo siento, el archivo ya existe.";
+          $uploadOk = 0;
+        }
+
+        if ($_FILES["fileToUpload"]["size"] > 500000) {
+          echo "Lo siento, tu archivo es demasiado grande.";
+          $uploadOk = 0;
+        }
+
+        if (
+          $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+          && $imageFileType != "gif"
+        ) {
+          echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG & GIF.";
+          $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+          echo "Lo siento, tu archivo no fue subido.";
+        } else {
+          if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "El archivo " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " ha sido subido.";
+          } else {
+            echo "Lo siento, hubo un error al subir tu archivo.";
+          }
+        }
+      }
+      ?>
+
       <fieldset class="fieldset">
         <legend class="legend">Información</legend>
 
@@ -48,7 +99,7 @@
 
         <label class="form-label">
           Imagen
-          <input type="file" class="form-input">
+          <input type="file" class="form-input-file">
         </label>
         <label class="form-label">
           <input type="submit" class="form-input">
@@ -120,6 +171,7 @@
 
   <script src="./../js/jquery/jquery-3.7.1.min.js"></script>
   <script src="./../js/header.js"></script>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>

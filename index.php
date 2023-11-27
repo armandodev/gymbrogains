@@ -70,12 +70,12 @@ require_once __DIR__ . "/includes/session.php";
               Ejercicios
             </a>
           </li>
-          <li class="header-nav-link">
+          <!-- <li class="header-nav-link">
             <a href="./calculator.php">
               <span class="material-icons"> calculate </span>
               Calculadora
             </a>
-          </li>
+          </li> -->
           <?php
           if (isset($_SESSION["user"])) { ?>
             <li class="header-nav-link">

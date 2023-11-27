@@ -133,7 +133,7 @@
                 <span class="progressbar">
                   <span class="progressbar-fill"></span>
                 </span>
-                <span>2</span> Calculadora
+                <span>2</span> Usuarios
               </label>
               <label for="foro">
                 <span class="progressbar">

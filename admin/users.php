@@ -76,7 +76,32 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 
   <main id="main">
     <section id="users">
-
+      <?php
+      foreach ($users as $user) {
+      ?>
+        <div class="user">
+          <div class="user-info">
+            <div class="user-avatar">
+              <img src="./../images/avatars/<?php echo $user['Avatar']; ?>" alt="<?php echo $user['Name']; ?>" />
+            </div>
+            <div class="user-data">
+              <h3 class="user-name"><?php echo $user['Name']; ?></h3>
+              <p class="user-username"><?php echo $user['Username']; ?></p>
+              <p class="user-role"><?php echo $user['Role']; ?></p>
+            </div>
+          </div>
+          <div class="user-actions">
+            <a href="./edit-user.php?id=<?php echo $user['UserId']; ?>" class="user-action">
+              <span class="material-icons"> edit </span>
+            </a>
+            <a href="./delete-user.php?id=<?php echo $user['UserId']; ?>" class="user-action">
+              <span class="material-icons"> delete </span>
+            </a>
+          </div>
+        </div>
+      <?php
+      }
+      ?>
     </section>
   </main>
 
