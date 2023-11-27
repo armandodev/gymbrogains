@@ -29,28 +29,17 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 
 <body>
   <?php
-  // Recogida de datos del formulario
-  $exercise_name = $_POST['exercise_name'];
-  $description = $_POST['description'];
-  $category = $_POST['category'];
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $exercise_name = $_POST['exercise_name'];
+    $description = $_POST['description'];
+    $category = $_POST['category'];
+    $image = $_FILES['image'];
 
-  // Subida de la imagen
-  $target_dir = "images/";
-  $target_file = $target_dir . basename($_FILES["image"]["name"]);
-  move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-
-  // Inserción de los datos en la base de datos
-  $sql = "INSERT INTO exercises (name, description, category, image)
-    VALUES ('$exercise_name', '$description', '$category', '$target_file')";
-
-  if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    // Aquí puedes manejar los datos del formulario
   }
   ?>
   <dialog class="modal" id="modal-form" open>
-    <form action="./" method="post" id="insert-exercise" class="form">
+    <form action="" method="post" id="insert-exercise" class="form">
       <button class="close-modal" id="close-modal">
         <span class="material-icons"> close </span>
       </button>

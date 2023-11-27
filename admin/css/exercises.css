@@ -3,7 +3,7 @@
   height: 100%;
   padding: 2rem 1rem;
   box-sizing: border-box;
-  background: rgb(85, 85, 85);
+  background: rgb(201, 201, 201);
   display: grid;
   place-items: center;
   overflow: auto;
@@ -13,7 +13,7 @@
 .form {
   width: 100%;
   max-width: 500px;
-  background: white;
+  background: rgba(110, 110, 110, 0.432);
   padding: 1rem;
   box-sizing: border-box;
   position: relative;
