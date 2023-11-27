@@ -17,6 +17,7 @@
     <title>Administración | Gymbrogains</title>
 
     <link rel="stylesheet" href="./../fonts/css/index.css">
+    <link rel="stylesheet" href="./../css/index-slider.css">
     <link rel="stylesheet" href="./../css/normalize.css">
     <link rel="stylesheet" href="./../css/global.css">
     <link rel="stylesheet" href="./../css/header.css">
@@ -74,73 +75,75 @@
     </header>
 
     <main>
-      <section id="banner">
-        <article>
-          <h3>Administración</h3>
-          <p>Gymbrogains</p>
-        </article>
-      </section>
-      <section id="users">
-        <ul id="users-list">
-
-          <li class="">
-            <div class="">
-              <h2 class="">
-                <?php echo $users['Username']; ?>
-              </h2>
-            </div>
-            <div class="">
-              <p class="">
-                <span class="material-icons"> star </span>
-                <span class="exercise-rating-value"><?php echo $exercise['AverageRating']; ?></span>
-              </p>
-              <a href="./exercise.php?id=<?php echo $exercise['ExerciseID']; ?>" class="">Ver usuarios</a>
-            </div>
-          </li>
-        </ul>
-
-      </section>
-      <section id="exercises">
-        <ul id="exercises-list">
-          <?php foreach ($exercises as $exercise) { ?>
-            <li class="exercise">
-              <div class="exercise-category-name">
-                <img src="./images/exercises/icons/<?php echo $exercise['Category']; ?>.webp" alt="<?php echo $exercise['ExerciseName']; ?>, <?php echo $exercise['Category'] ?>" />
-                <h2 class="exercise-name">
-                  <?php echo $exercise['ExerciseName']; ?>
-                </h2>
-              </div>
-              <div class="exercise-info">
-                <p class="exercise-rating">
-                  <span class="material-icons"> star </span>
-                  <span class="exercise-rating-value"><?php echo $exercise['AverageRating']; ?></span>
+      <section id="slider-section">
+        <div class="slider-container">
+          <input type="radio" id="exercises" class="slider-input" name="banner" checked />
+          <input type="radio" id="calculator" class="slider-input" name="banner" />
+          <input type="radio" id="foro" class="slider-input" name="banner" />
+          <div class="slider">
+            <div id="exercises-banner" class="banner">
+              <div class="banner-inner-wrapper">
+                <h1>Ejercicios</h1>
+                <p>
+                  Crea, edita y elimina: Gestiona los ejercicios de la base de
+                  datos.
                 </p>
-                <a href="./exercise.php?id=<?php echo $exercise['ExerciseID']; ?>" class="exercise-button">Ver ejercicio</a>
+                <div class="line"></div>
+                <div class="learn-more-button">
+                  <a href="./exercises.php">Mas detalles</a>
+                </div>
               </div>
-            </li>
-        </ul>
-
-      <?php } ?>
-      </section>
-      <section id="forum">
-        <ul id="forum-list">
-
-          <li class="">
-            <div class="">
-
-              <h2 class="">
-                <?php echo $forum['Forum']; ?>
-              </h2>
             </div>
-            <div class="">
-              <p class="">
-                <span class="material-icons"> star </span>
-                <span class="exercise-rating-value"><?php echo $exercise['AverageRating']; ?></span>
-              </p>
-              <a href="./exercise.php?id=<?php echo $exercise['ExerciseID']; ?>" class="">Ver temas</a>
+            <div id="calculator-banner" class="banner">
+              <div class="banner-inner-wrapper">
+                <h1>Usuarios</h1>
+                <p>
+                  Crea, edita y elimina: Gestiona los usuarios de la base de
+                  datos.
+                </p>
+                <div class="line"></div>
+                <div class="learn-more-button">
+                  <a href="./calculator.php">Mas detalles</a>
+                </div>
+              </div>
             </div>
-          </li>
-        </ul>
+            <div id="foro-banner" class="banner">
+              <div class="banner-inner-wrapper">
+                <h1>Foro</h1>
+                <p>
+                  Crea, edita y elimina: Gestiona los hilos y comentarios de la
+                  base de datos.
+                </p>
+                <div class="line"></div>
+                <div class="learn-more-button">
+                  <a href="./forum.php">Mas detalles</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav>
+            <div class="controls">
+              <label for="exercises">
+                <span class="progressbar">
+                  <span class="progressbar-fill"></span>
+                </span>
+                <span>1</span> Ejercicios
+              </label>
+              <label for="calculator">
+                <span class="progressbar">
+                  <span class="progressbar-fill"></span>
+                </span>
+                <span>2</span> Calculadora
+              </label>
+              <label for="foro">
+                <span class="progressbar">
+                  <span class="progressbar-fill"></span>
+                </span>
+                <span>3</span> Foro
+              </label>
+            </div>
+          </nav>
+        </div>
       </section>
     </main>
 
@@ -152,6 +155,7 @@
 
     <script src="./../js/jquery/jquery-3.7.1.min.js"></script>
     <script src="./../js/header.js"></script>
+    <script src="./../js/index-slider.js"></script>
   </body>
 
   </html>
