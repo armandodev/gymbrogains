@@ -86,7 +86,7 @@
           <li class="">
             <div class="">
               <h2 class="">
-                <?php echo $users['UserName']; ?>
+                <?php echo $users['Username']; ?>
               </h2>
             </div>
             <div class="">
@@ -147,7 +147,6 @@
     <footer>
       <div class="footer-bottom">
         <p>&copy; 2023 Gymbrogains</p>
-        <p>Delaimy es trap</p>
       </div>
     </footer>
 
