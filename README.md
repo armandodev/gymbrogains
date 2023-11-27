@@ -27,4 +27,3 @@ Si tienes alguna pregunta o sugerencia, no dudes en contactarnos en [contacto@gy
 ## Agradecimientos
 
 Gracias por ser parte de la comunidad Gymbrogains. Tu dedicación es inspiradora.
-# gymbrogains
