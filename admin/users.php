@@ -6,6 +6,16 @@ $conn = $db->connect();
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 $users = $result->fetch_all(MYSQLI_ASSOC);
+
+function getUsers($page, $usersPerPage)
+{
+  $offset = ($page - 1) * $usersPerPage;
+  $sql = "SELECT * FROM users LIMIT $usersPerPage OFFSET $offset";
+  // Ejecuta la consulta y devuelve los resultados
+}
+$page = $_GET['page'];
+$users = getUsers($page, 10);
+echo json_encode($users);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -77,7 +87,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
   <main id="main">
     <section id="users">
       <?php
-      foreach ($users as $user) {
+      foreach ($user as $user) {
       ?>
         <div class="user">
           <div class="user-info">
@@ -102,6 +112,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
       <?php
       }
       ?>
+
     </section>
   </main>
 

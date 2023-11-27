@@ -28,18 +28,8 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 </head>
 
 <body>
-  <?php
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $exercise_name = $_POST['exercise_name'];
-    $description = $_POST['description'];
-    $category = $_POST['category'];
-    $image = $_FILES['image'];
-
-    // Aquí puedes manejar los datos del formulario
-  }
-  ?>
   <dialog class="modal" id="modal-form" open>
-    <form action="" method="post" id="insert-exercise" class="form">
+    <form action="" class=" method=" post" id="insert-exercise" class="form">
       <button class="close-modal" id="close-modal">
         <span class="material-icons"> close </span>
       </button>
@@ -49,17 +39,17 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 
         <label class="form-label">
           Nombre del ejercicio
-          <input type="text" class="exercise-input">
+          <input type="text" class="exercise-input" name="name-exercises">
         </label>
 
         <label class="form-label">
           Descripción
-          <input type="text" class="form-input">
+          <input type="text" class="form-input" name="description">
         </label>
 
         <label class="form-label">
           Categoría
-          <select class="select-category form-select">
+          <select class="select-category form-select" name="category">
             <option value="Gimnasio">Gimnasio</option>
             <option value="Calistenia">Calistenia</option>
           </select>
@@ -81,7 +71,14 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
       </fieldset>
     </form>
   </dialog>
-
+  <?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombreEjercicio = $_POST['name-exercises'];
+    $descripcion = $_POST['description'];
+    $categoria = $_POST['category'];
+    // procesa los datos aquí
+  }
+  ?>
   <header>
     <div class="header-container">
       <div class="header-logo">

@@ -26,7 +26,7 @@ require_once __DIR__ . "/includes/session.php";
   <?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
     <div class="modal" id="login-success">
       <p class="modal-text">
-        Bienvenido de nuevo
+        Bienvenido(a) de nuevo
         <span><?php echo $_SESSION['user']['Username'] ?></span>
       </p>
       <a href="./index.php" class="modal-button">Cerrar</a>
