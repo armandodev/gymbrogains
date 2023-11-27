@@ -29,7 +29,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 
 <body>
   <dialog class="modal" id="modal-form" open>
-    <form action="" class=" method=" post" id="insert-exercise" class="form">
+    <form action="" class="" method="post" id="insert-exercise" class="form">
       <button class="close-modal" id="close-modal">
         <span class="material-icons"> close </span>
       </button>
