@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     body.style.overflow = "hidden";
   });
 
-  closeModal.addEventListener("click", () => {
+  closeModal.addEventListener("click", (event) => {
+    event.preventDefault();
     modal.close();
     body.style.overflow = "auto";
   });

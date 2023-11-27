@@ -28,47 +28,32 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 </head>
 
 <body>
+  <?php
+  // Recogida de datos del formulario
+  $exercise_name = $_POST['exercise_name'];
+  $description = $_POST['description'];
+  $category = $_POST['category'];
+
+  // Subida de la imagen
+  $target_dir = "images/";
+  $target_file = $target_dir . basename($_FILES["image"]["name"]);
+  move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
+  // Inserción de los datos en la base de datos
+  $sql = "INSERT INTO exercises (name, description, category, image)
+    VALUES ('$exercise_name', '$description', '$category', '$target_file')";
+
+  if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  ?>
   <dialog class="modal" id="modal-form" open>
     <form action="./" method="post" id="insert-exercise" class="form">
-      <button class="modal-close" id="modal-close">
+      <button class="close-modal" id="close-modal">
         <span class="material-icons"> close </span>
       </button>
-      <?php
-      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-        if (file_exists($target_file)) {
-          echo "Lo siento, el archivo ya existe.";
-          $uploadOk = 0;
-        }
-
-        if ($_FILES["fileToUpload"]["size"] > 500000) {
-          echo "Lo siento, tu archivo es demasiado grande.";
-          $uploadOk = 0;
-        }
-
-        if (
-          $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-          && $imageFileType != "gif"
-        ) {
-          echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG & GIF.";
-          $uploadOk = 0;
-        }
-
-        if ($uploadOk == 0) {
-          echo "Lo siento, tu archivo no fue subido.";
-        } else {
-          if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "El archivo " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " ha sido subido.";
-          } else {
-            echo "Lo siento, hubo un error al subir tu archivo.";
-          }
-        }
-      }
-      ?>
 
       <fieldset class="fieldset">
         <legend class="legend">Información</legend>
