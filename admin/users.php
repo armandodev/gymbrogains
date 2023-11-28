@@ -6,16 +6,6 @@ $conn = $db->connect();
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 $users = $result->fetch_all(MYSQLI_ASSOC);
-
-function getUsers($page, $usersPerPage)
-{
-  $offset = ($page - 1) * $usersPerPage;
-  $sql = "SELECT * FROM users LIMIT $usersPerPage OFFSET $offset";
-  // Ejecuta la consulta y devuelve los resultados
-}
-$page = $_GET['page'];
-$users = getUsers($page, 10);
-echo json_encode($users);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -81,8 +71,6 @@ echo json_encode($users);
       </button>
     </div>
   </header>
-
-  <!-- Mostrar con un lazy load o con paginación cualquiera de la que quieran donde con un foreach recorran todo el array recuperado de usuarios -->
 
   <main id="main">
     <section id="users">

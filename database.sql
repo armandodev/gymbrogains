@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXIST
+
 CREATE TABLE `exercises` (
   `ExerciseID` int(11) NOT NULL AUTO_INCREMENT,
   `ExerciseName` varchar(255) NOT NULL,
