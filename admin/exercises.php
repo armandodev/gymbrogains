@@ -39,7 +39,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 
         <label class="form-label">
           Nombre del ejercicio
-          <input type="text" class="exercise-input" name="name-exercises">
+          <input type="text" class="form-input" name="name-exercises">
         </label>
 
         <label class="form-label">
