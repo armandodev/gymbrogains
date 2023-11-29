@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("insert-exercise");
+  const modal = document.getElementById("modal-form");
   const btn = document.getElementById("add-exercise");
   const closeModalBtn = document.getElementById("close-modal");
 
   btn.addEventListener("click", (event) => {
-    openModal(modal, event);
-  });
-});
+    event.preventDefault();
 
-  btn.addEventListener("click", (event) => {
-    
+    modal.showModal();
+    modal.style.display = "grid";
+    modal.style.position = "relative";
   });
 });

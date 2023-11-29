@@ -83,16 +83,14 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
   $sql = "INSERT INTO exercises (exerciesName, ExerciseDescription, category) VALUES ('$nombreEjercicio', '$description', '$category')";
 
   // Ejecuta la consulta
-  if (mysqli_query($db, $sql)) {
+  if (mysqli_query($conn, $sql)) {
     echo "Nuevo registro creado con éxito";
   } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($db);
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
 
   // Cierra la conexión
-  mysqli_close($db);
-
-  ?>
+  mysqli_close($conn);
   ?>
   <header>
     <div class="header-container">
