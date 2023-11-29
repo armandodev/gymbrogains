@@ -31,7 +31,7 @@ body {
 
 /* Estilos para la sección principal */
 main {
-  min-height: 100vh; /* Altura mínima del 100% del alto de la ventana gráfica (viewport height) */
+  min-height: 80vh; /* Altura mínima del 100% del alto de la ventana gráfica (viewport height) */
 }
 
 /* Reglas de medios para ajustar el tamaño de fuente según el ancho de la pantalla */

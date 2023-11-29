@@ -1,0 +1,94 @@
+#users {
+  background: rgb(var(--shark-900));
+  color: rgb(var(--shark-50));
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.user {
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(var(--shark-700));
+}
+
+.user-data > * {
+  margin: 0;
+  padding: 0;
+}
+
+.user-data {
+  flex: 1;
+  padding: 0 0.5rem;
+}
+
+.user-name {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.user-name span.material-icons {
+  font-size: 1.5em;
+}
+
+.user-username {
+  text-transform: lowercase;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.user-role {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-action {
+  background: none;
+  color: rgb(var(--shark-50));
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: 2px solid rgb(var(--shark-50));
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+}
+
+.user-action:hover {
+  background: rgb(var(--shark-50));
+  color: rgb(var(--shark-900));
+}
+
+.user-action:last-child:hover {
+  background: rgb(255 0 0 / 50%);
+  border: 2px solid transparent;
+  color: rgb(var(--shark-50));
+}
+
+.user-action span.material-icons {
+  font-size: 1.5em;
+}

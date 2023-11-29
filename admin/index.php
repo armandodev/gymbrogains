@@ -98,12 +98,12 @@
               <div class="banner-inner-wrapper">
                 <h1>Usuarios</h1>
                 <p>
-                  Crea, edita y elimina: Gestiona los usuarios de la base de
+                  Edita y elimina: Gestiona los usuarios de la base de
                   datos.
                 </p>
                 <div class="line"></div>
                 <div class="learn-more-button">
-                  <a href="./calculator.php">Mas detalles</a>
+                  <a href="./users.php">Mas detalles</a>
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@
               <div class="banner-inner-wrapper">
                 <h1>Foro</h1>
                 <p>
-                  Crea, edita y elimina: Gestiona los hilos y comentarios de la
+                  Edita y elimina: Gestiona los hilos y comentarios de la
                   base de datos.
                 </p>
                 <div class="line"></div>

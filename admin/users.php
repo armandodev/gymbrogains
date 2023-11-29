@@ -20,6 +20,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
   <link rel="stylesheet" href="./../css/global.css">
   <link rel="stylesheet" href="./../css/header.css">
   <link rel="stylesheet" href="./../css/footer.css">
+  <link rel="stylesheet" href="./css/users.css">
 </head>
 
 <body>
@@ -74,39 +75,37 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 
   <main id="main">
     <section id="users">
-      <?php
-      foreach ($user as $user) {
+      <?php foreach ($users as $user) {
+        $role = $user['Role'] == 1
+          ? 'person'
+          :  'admin_panel_settings';
       ?>
-        <div class="user">
-          <div class="user-info">
-            <div class="user-avatar">
-              <img src="./../images/avatars/<?php echo $user['Avatar']; ?>" alt="<?php echo $user['Name']; ?>" />
-            </div>
-            <div class="user-data">
-              <h3 class="user-name"><?php echo $user['Name']; ?></h3>
-              <p class="user-username"><?php echo $user['Username']; ?></p>
-              <p class="user-role"><?php echo $user['Role']; ?></p>
-            </div>
-          </div>
-          <div class="user-actions">
+        <article class="user">
+          <section class="user-data">
+            <h3 class="user-name"><?php echo $user['Name']; ?> <span class="material-icons"><?php echo $role; ?></span></h3>
+            <p class="user-username">@<?php echo $user['Username']; ?></p>
+          </section>
+          <section class="user-actions">
             <a href="./edit-user.php?id=<?php echo $user['UserId']; ?>" class="user-action">
               <span class="material-icons"> edit </span>
             </a>
             <a href="./delete-user.php?id=<?php echo $user['UserId']; ?>" class="user-action">
               <span class="material-icons"> delete </span>
             </a>
-          </div>
-        </div>
-      <?php
-      }
-      ?>
-
+          </section>
+        </article>
+      <?php } ?>
     </section>
   </main>
 
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Gymbrogains</p>
+    </div>
+  </footer>
+
   <script src="./../js/jquery/jquery-3.7.1.min.js"></script>
   <script src="./../js/header.js"></script>
-
 </body>
 
 </html>

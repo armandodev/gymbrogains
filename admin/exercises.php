@@ -63,7 +63,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 
         <label class="form-label">
           Imagen
-          <input type="file" class="form-input-file">
+          <input type="file" class="form-input-file" name="image">
         </label>
         <label class="form-label">
           <input type="submit" class="form-input">
@@ -76,8 +76,23 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
     $nombreEjercicio = $_POST['name-exercises'];
     $description = $_POST['description'];
     $category = $_POST['category'];
+    $image = $_FILES['image'];
+    $targetDir = "./../images/exercises/";
     // procesa los datos aquí
   }
+  $sql = "INSERT INTO exercises (exerciesName, ExerciseDescription, category) VALUES ('$nombreEjercicio', '$description', '$category')";
+
+  // Ejecuta la consulta
+  if (mysqli_query($db, $sql)) {
+    echo "Nuevo registro creado con éxito";
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($db);
+  }
+
+  // Cierra la conexión
+  mysqli_close($db);
+
+  ?>
   ?>
   <header>
     <div class="header-container">
@@ -120,7 +135,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
             </a>
           </li>
           <li class="header-nav-link">
-            <a href="./add-exercise.php">
+            <a href="./" id="add-exercise">
               <span class="material-icons"> add </span>
               Subir un ejercicio
             </a>
