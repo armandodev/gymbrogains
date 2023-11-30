@@ -4,7 +4,7 @@ Gymbrogains es tu compañero digital para alcanzar tus objetivos de acondicionam
 
 ## Acerca de Gymbrogains
 
-[Código de invitación](https://prod.liveshare.vsengsaas.visualstudio.com/join?C0AD157BD7D535A05F79453D4C929803313C)
+[Código de invitación](https://prod.liveshare.vsengsaas.visualstudio.com/join?91A631142CE51456594B1A66E9E6E6EA1536)
 
 En Gymbrogains, creemos en la importancia de un estilo de vida saludable y activo. Nuestra aplicación está diseñada para ayudarte a:
 
