@@ -1,8 +1,14 @@
 <!-- Actualización, eliminación y creación de usuarios a través de la parte de administración -->
 <?php
 require_once "./../includes/session.php";
-$conn = $db->connect();
 
+if (!$isAdmin) {
+  header("Location: ./../index.php");
+  exit();
+}
+
+$conn = $db->connect();
+// Nice
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 $users = $result->fetch_all(MYSQLI_ASSOC);

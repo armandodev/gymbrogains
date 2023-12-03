@@ -3,11 +3,13 @@
 -->
 <?php
 require_once "./../includes/session.php";
-$conn = $db->connect();
 
-$sql = "SELECT * FROM users";
-$result = $conn->query($sql);
-$users = $result->fetch_all(MYSQLI_ASSOC);
+if (!$isAdmin) {
+  header("Location: ./../index.php");
+  exit();
+}
+
+$conn = $db->connect();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,7 +31,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
 
 <body>
   <dialog class="modal" id="modal-form">
-    <form action="" class="" method="post" id="insert-exercise" class="form">
+    <form action="insert-exercises.php" class="" method="POST" id="insert-exercise" class="form">
       <button class="close-modal" id="close-modal">
         <span class="material-icons"> close </span>
       </button>
@@ -71,27 +73,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
       </fieldset>
     </form>
   </dialog>
-  <?php
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombreEjercicio = $_POST['name-exercises'];
-    $description = $_POST['description'];
-    $category = $_POST['category'];
-    $image = $_FILES['image'];
-    $targetDir = "./../images/exercises/";
-    // procesa los datos aquí
-  }
-  $sql = "INSERT INTO exercises (exerciesName, ExerciseDescription, category) VALUES ('$nombreEjercicio', '$description', '$category')";
 
-  // Ejecuta la consulta
-  if (mysqli_query($conn, $sql)) {
-    echo "Nuevo registro creado con éxito";
-  } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-  }
-
-  // Cierra la conexión
-  mysqli_close($conn);
-  ?>
   <header>
     <div class="header-container">
       <div class="header-logo">

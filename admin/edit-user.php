@@ -1,5 +1,5 @@
 <?php
-require_once ""
+require_once "./../includes/users.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,15 +13,13 @@ require_once ""
 </head>
 
 <body>
-    <h1>EDITAR USUARIO</h1>
-    <form action="modificar.php" method="post">
-        <div>id_cliente:<input type="text" name="id_cliente" size="20" maxlength="20" value="" placeholder="clave del cliente" aling="rigth" required autofocus></div><br>
-        <div>nombre:<input type="text" name="nombre" size="20" maxlength="20" value="" placeholder="nombre del cliente" aling="rigth" required autofocus></div><br>
-        <div>direccion:<input type="text" name="direccion" size="20" maxlength="20" value="" placeholder="direccion del cliente" aling="rigth" required autofocus></div><br>
-        <div>telefono:<input type="text" name="telefono" size="20" maxlength="20" value="" placeholder="telefono del cliente" aling="rigth" required autofocus></div><br>
-        <input class="in" type="submit" name="modificar" id="test" value="modificar">
-    </form>
-
+    <!-- Editar:
+    - Nombre
+    - Nombre de usuario
+    - Contraseña
+    - Descripción
+    - Identidad de género
+-->
     <form action="">
         <fieldset>
             <legend>Editar usuario</legend>
@@ -35,6 +33,31 @@ require_once ""
                 Apellido
                 <input type="text" name="lastname" id="lastname" placeholder="Apellido" required>
             </label>
+
+            <label>
+                Nombre de usuario
+                <input type="text" name="username" id="username" placeholder="nombreusuario">
+            </label>
+
+            <label>
+                Contraseña
+                <input type="text" name="password" id="password" placeholder="Contraseña">
+            </label>
+            <label>
+                Descripción
+                <input type="text" name="description" id="description" placeholder="Descripcion">
+            </label>
+
+            <label>
+                Género
+                <input type="text" name="gender" id="gender" placeholder="Genero">
+            </label>
+
+            <label>
+                Sexo
+                <input type="text" name="sex" id="sex" placeholder="Sexo">
+            </label>
+
         </fieldset>
     </form>
 </body>
