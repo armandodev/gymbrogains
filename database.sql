@@ -1,6 +1,8 @@
-CREATE DATABASE IF NOT EXIST
+CREATE DATABASE IF NOT EXIST `gymbrogains` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
-CREATE TABLE `exercises` (
+USE `gymbrogains`;
+
+CREATE TABLE IF NOT EXIST `exercises` (
   `ExerciseID` int(11) NOT NULL AUTO_INCREMENT,
   `ExerciseName` varchar(255) NOT NULL,
   `ExerciseDescription` text NOT NULL,
@@ -9,7 +11,7 @@ CREATE TABLE `exercises` (
   PRIMARY KEY (`ExerciseID`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-CREATE TABLE `exerciseratings` (
+CREATE TABLE IF NOT EXIST `exerciseratings` (
   `RatingID` int(11) NOT NULL AUTO_INCREMENT,
   `ExerciseID` int(11) NOT NULL,
   `UserID` int(11) NOT NULL,
@@ -98,7 +100,7 @@ VALUES
     0.00
   );
 
-CREATE TABLE `forum` (
+CREATE TABLE IF NOT EXIST `forum` (
   `TopicID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
   `TopicTitle` varchar(255) NOT NULL,
@@ -239,7 +241,7 @@ VALUES
     1
   );
 
-CREATE TABLE `forumlikes` (
+CREATE TABLE IF NOT EXIST `forumlikes` (
   `likeID` int(11) NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
   `TopicID` int(11) NOT NULL,
@@ -265,7 +267,7 @@ VALUES
   (14, 214, 14),
   (15, 215, 15);
 
-CREATE TABLE `macronutrients` (
+CREATE TABLE IF NOT EXIST `macronutrients` (
   `NutrientID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
   `Goal` smallint(6) NOT NULL,
@@ -279,7 +281,7 @@ CREATE TABLE `macronutrients` (
   PRIMARY KEY (`NutrientID`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-CREATE TABLE `userprogress` (
+CREATE TABLE IF NOT EXIST `userprogress` (
   `ProgressID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
   `Weight` decimal(10, 2) NOT NULL,
@@ -288,7 +290,7 @@ CREATE TABLE `userprogress` (
   PRIMARY KEY (`ProgressID`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXIST `users` (
   `UserID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(60) NOT NULL,
   `Username` varchar(20) NOT NULL,
