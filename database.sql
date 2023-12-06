@@ -1,8 +1,8 @@
-CREATE DATABASE IF NOT EXIST `gymbrogains` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE `gymbrogains` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 USE `gymbrogains`;
 
-CREATE TABLE IF NOT EXIST `exercises` (
+CREATE TABLE `exercises` (
   `ExerciseID` int(11) NOT NULL AUTO_INCREMENT,
   `ExerciseName` varchar(255) NOT NULL,
   `ExerciseDescription` text NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXIST `exercises` (
   PRIMARY KEY (`ExerciseID`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXIST `exerciseratings` (
+CREATE TABLE `exerciseratings` (
   `RatingID` int(11) NOT NULL AUTO_INCREMENT,
   `ExerciseID` int(11) NOT NULL,
   `UserID` int(11) NOT NULL,
@@ -100,7 +100,7 @@ VALUES
     0.00
   );
 
-CREATE TABLE IF NOT EXIST `forum` (
+CREATE TABLE `forum` (
   `TopicID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
   `TopicTitle` varchar(255) NOT NULL,
@@ -241,7 +241,7 @@ VALUES
     1
   );
 
-CREATE TABLE IF NOT EXIST `forumlikes` (
+CREATE TABLE `forumlikes` (
   `likeID` int(11) NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
   `TopicID` int(11) NOT NULL,
@@ -267,7 +267,7 @@ VALUES
   (14, 214, 14),
   (15, 215, 15);
 
-CREATE TABLE IF NOT EXIST `macronutrients` (
+CREATE TABLE `macronutrients` (
   `NutrientID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
   `Goal` smallint(6) NOT NULL,
@@ -281,7 +281,7 @@ CREATE TABLE IF NOT EXIST `macronutrients` (
   PRIMARY KEY (`NutrientID`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXIST `userprogress` (
+CREATE TABLE `userprogress` (
   `ProgressID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
   `Weight` decimal(10, 2) NOT NULL,
@@ -290,7 +290,7 @@ CREATE TABLE IF NOT EXIST `userprogress` (
   PRIMARY KEY (`ProgressID`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXIST `users` (
+CREATE TABLE `users` (
   `UserID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(60) NOT NULL,
   `Username` varchar(20) NOT NULL,
